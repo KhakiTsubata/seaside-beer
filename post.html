@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>記事 — Seaside Beer</title>
+<link rel="icon" type="image/png" href="assets/logo-icon.png" />
+<link rel="apple-touch-icon" href="assets/logo-icon.png" />
+<meta name="theme-color" content="#00AFE0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --sb-sky-50:#EAFAFF;--sb-sky-100:#CFF3FF;--sb-sky-200:#A3E7FF;--sb-sky-300:#6BD8FF;
+    --sb-sky-400:#2EC4F1;--sb-sky-500:#00AFE0;--sb-sky-600:#0090BE;--sb-sky-700:#03719A;
+    --sb-sky-800:#08547A;--sb-sky-900:#0E3B5C;--sb-sun-400:#FFD95C;--sb-sun-500:#FFC12E;
+    --sb-sun-600:#E89A00;--sb-ink:#0E3B5C;--sb-muted:#5B7E94;--sb-line:#DCF1FB;
+    --sb-paper:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:'Zen Maru Gothic',sans-serif;color:var(--sb-ink);background:linear-gradient(180deg,#EAFAFF 0%,#FFFFFF 200px);-webkit-font-smoothing:antialiased;letter-spacing:0.01em}
+  a{color:inherit;text-decoration:none}
+
+  .header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--sb-line)}
+  .header-inner{max-width:880px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--sb-sky-800)}
+  .logo-mark{width:38px;height:38px;border-radius:10px;overflow:hidden}
+  .logo-mark img{width:100%;height:100%;object-fit:cover}
+  .back-link{font-size:13px;color:var(--sb-sky-700);font-weight:700;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1px solid var(--sb-sky-200);transition:all .2s}
+  .back-link:hover{background:var(--sb-sky-50);border-color:var(--sb-sky-400)}
+
+  .article{max-width:760px;margin:0 auto;padding:48px 24px 96px}
+  .article-meta{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+  .article-tag{display:inline-block;font-size:11px;font-weight:800;color:var(--sb-sky-700);letter-spacing:0.14em;background:var(--sb-sky-50);padding:5px 12px;border-radius:999px}
+  .article-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--sb-muted)}
+  .article h1{font-size:34px;line-height:1.5;font-weight:900;margin:0 0 24px;letter-spacing:0.01em;color:var(--sb-sky-900)}
+  .article-thumb{width:100%;aspect-ratio:16/9;border-radius:18px;background:linear-gradient(135deg,var(--sb-sky-200),var(--sb-sky-300));margin-bottom:32px;overflow:hidden;background-size:cover;background-position:center}
+
+  .article-body{font-size:16px;line-height:2.0;color:#2A4A66}
+  .article-body h2{font-size:22px;font-weight:800;margin:40px 0 16px;color:var(--sb-sky-900);padding-bottom:8px;border-bottom:2px solid var(--sb-sky-100)}
+  .article-body h3{font-size:18px;font-weight:800;margin:32px 0 12px;color:var(--sb-sky-800)}
+  .article-body p{margin:0 0 18px}
+  .article-body ul,.article-body ol{padding-left:24px;margin:0 0 18px}
+  .article-body li{margin:0 0 8px}
+  .article-body strong{color:var(--sb-sky-700);font-weight:700}
+  .article-body a{color:var(--sb-sky-600);text-decoration:underline}
+
+  .article-foot{margin-top:60px;padding-top:32px;border-top:1px solid var(--sb-line);text-align:center}
+  .article-foot .back-link{font-size:14px;padding:12px 24px}
+
+  .empty{text-align:center;padding:80px 24px;color:var(--sb-muted)}
+  .empty h2{color:var(--sb-ink);font-size:20px;margin:0 0 12px}
+
+  @media (max-width:768px){
+    .article{padding:32px 20px 64px}
+    .article h1{font-size:24px}
+    .article-body{font-size:15px;line-height:1.9}
+    .article-body h2{font-size:19px}
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="data/posts.js"></script>
+
+<script type="text/babel">
+// シンプルなマークダウン → HTML 変換
+function mdToHtml(md) {
+  if (!md) return '';
+  let html = md
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  // headings
+  html = html.replace(/^### (.*$)/gm, '<h3>$1</h3>');
+  html = html.replace(/^## (.*$)/gm, '<h2>$1</h2>');
+  // bold
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  // lists
+  html = html.replace(/(^|\n)((?:- .+(?:\n|$))+)/g, (m, prefix, block) => {
+    const items = block.trim().split('\n').map(l => '<li>' + l.replace(/^- /, '') + '</li>').join('');
+    return prefix + '<ul>' + items + '</ul>';
+  });
+  // paragraphs
+  html = html.split(/\n{2,}/).map(p => {
+    if (/^\s*<(h\d|ul|ol|li)/.test(p.trim())) return p;
+    return '<p>' + p.trim().replace(/\n/g, '<br>') + '</p>';
+  }).join('\n');
+  return html;
+}
+
+function PostPage() {
+  const [post, setPost] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
+    if (!slug) { setLoading(false); return; }
+
+    const loadPosts = () => {
+      const local = localStorage.getItem('sb-posts');
+      let posts = null;
+      if (local) { try { posts = JSON.parse(local); } catch(e){} }
+      if (!posts) posts = window.SB_POSTS || [];
+      const found = posts.find(p => p.slug === slug);
+      setPost(found || null);
+      if (found) document.title = found.title + ' — Seaside Beer';
+      setLoading(false);
+    };
+    loadPosts();
+  }, []);
+
+  return (
+    <>
+      <header className="header">
+        <div className="header-inner">
+          <a href="index.html" className="logo">
+            <span className="logo-mark"><img src="assets/logo-icon.png" alt="logo" /></span>
+            <span>Seaside Beer</span>
+          </a>
+          <a href="index.html#blog" className="back-link">← トップに戻る</a>
+        </div>
+      </header>
+
+      <main className="article">
+        {loading ? (
+          <div className="empty"><h2>読み込み中...</h2></div>
+        ) : !post ? (
+          <div className="empty">
+            <h2>記事が見つかりませんでした</h2>
+            <p>URLが正しいかご確認ください。</p>
+            <a href="index.html" className="back-link" style={{ marginTop: 16, display: 'inline-flex' }}>← トップに戻る</a>
+          </div>
+        ) : (
+          <>
+            <div className="article-meta">
+              <span className="article-tag">{post.label}</span>
+              <span className="article-date">{post.date}</span>
+            </div>
+            <h1>{post.title}</h1>
+            {post.thumbnail && (
+              <div className="article-thumb" style={{ backgroundImage: `url(${post.thumbnail})` }}></div>
+            )}
+            <div className="article-body" dangerouslySetInnerHTML={{ __html: mdToHtml(post.body) }}></div>
+            <div className="article-foot">
+              <a href="index.html#blog" className="back-link">← ブログ一覧に戻る</a>
+            </div>
+          </>
+        )}
+      </main>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<PostPage />);
+</script>
+</body>
+</html>
