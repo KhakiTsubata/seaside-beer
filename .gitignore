@@ -4,3 +4,5 @@ node_modules/
 *.log
 admin.html
 tokusho.html
+
+.vercel
