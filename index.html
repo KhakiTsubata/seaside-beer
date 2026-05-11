@@ -631,11 +631,14 @@ function App() {
 
       {/* ── Hero ── */}
       <div id="home" className="hero">
-        <img
-          className="hero-image"
-          src="assets/hero-seaside-full.png"
-          alt="Seaside Beer — AIに仕事を任せて、海辺でビールでも飲もう。生成AIスクール・法人向け支援・瀬戸内・愛媛"
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcSet="assets/hero-seaside-mobile.png" />
+          <img
+            className="hero-image"
+            src="assets/hero-seaside-full.png"
+            alt="Seaside Beer — AIに仕事を任せて、海辺でビールでも飲もう。生成AIスクール・法人向け支援・瀬戸内・愛媛"
+          />
+        </picture>
         <div className="hero-caption reveal in">
           <div className="hero-inner">
             <p className="hero-lead" style={{ color: 'rgb(0,61,95)' }}>
