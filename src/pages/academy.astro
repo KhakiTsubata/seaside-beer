@@ -4,16 +4,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="AI人材育成｜SeasideBeer"
-  description="企業に見せられる成果物を持つ若者を松山から育てる、SeasideBeerの実践型AI人材育成構想です。"
+  description="HP、資料、小さなアプリを完成させ、企業へ見せて説明できる若者を松山から育てる、SeasideBeerの実践講座です。"
   image="/og.png"
 >
   <section class="academy-hero">
     <div class="academy-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="container-wide academy-head">
       <p class="eyebrow">02 / FOR TALENT</p>
-      <h1>企業に見せる、<br /><em>10人</em>を。</h1>
+      <h1>作品を持つ、<br /><em>最初の10人</em>。</h1>
       <div class="academy-lead">
-        <p>修了証ではなく、見せられるURLと、自分の言葉で説明できる力を。松山の若者が、地域企業の次の仕事につながるところまで設計します。</p>
+        <p>HP、資料、小さなアプリ。完成したURLを企業へ見せ、どこをAIに任せ、どこを自分で直したか説明する。2時間×4回で、そこを目指します。</p>
         <a class="button button-primary" href="/contact/">講座・連携を相談する <span aria-hidden="true">↗</span></a>
       </div>
     </div>
@@ -24,8 +24,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="target-number" data-reveal><span>FIRST MILESTONE</span><strong>10</strong><small>PEOPLE WITH PROOF</small></div>
       <div class="target-copy" data-reveal>
         <p class="section-index">THE FIRST GOAL</p>
-        <h2>人数ではなく、<br /><em>証拠</em>を数える。</h2>
-        <p>何人集まったかより、何を作り、どう直し、どう説明できるか。企業が実物を見て次の会話を始められる状態を、最初の基準にします。</p>
+        <h2>10人分の作品を、<br /><em>最初の実績</em>に。</h2>
+        <p>一人ずつ完成物を持ち、制作の途中で何を考え、どう直したかを話せる。企業が実物を見て次の質問をできる状態を、最初の基準にします。</p>
       </div>
     </div>
   </section>
@@ -44,7 +44,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="output-section">
     <div class="container-wide output-grid">
-      <header data-reveal><p class="section-index">OUTPUT FIRST</p><h2>最後に残るのは、<br />肩書きではなく、<em>作品。</em></h2></header>
+      <header data-reveal><p class="section-index">OUTPUT FIRST</p><h2>修了後も見せられる、<br /><em>作品を残す。</em></h2></header>
       <div class="output-system" data-reveal>
         <article><span>WEB</span><strong>HP / LP / Portfolio</strong><i>↗</i></article>
         <article><span>DOC</span><strong>企画書 / 営業資料 / Report</strong><i>↗</i></article>
@@ -58,10 +58,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container-wide partner-grid">
       <div data-reveal>
         <p class="section-index">FOR PARTNERS</p>
-        <h2>若者の負担を抑え、<br />地域で育てる。</h2>
+        <h2>受講料だけに頼らず、<br />地域で育てる。</h2>
       </div>
       <div class="partner-copy" data-reveal>
-        <p>企業、大学、行政、支援者と、受講機会、課題、発表の場をつなぎます。人材紹介を急がず、学びと成果を安全に見せられる関係から始めます。</p>
+        <p>企業、大学、行政、支援者に、講座協賛、会場、課題、発表の場を相談します。人材紹介を急がず、まずは学びと作品を安全に見せられる関係をつくります。</p>
         <ul>
           <li><span>01</span>講座への協賛・会場提供</li>
           <li><span>02</span>匿名化した企業課題の提供</li>
@@ -76,8 +76,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section section-compact">
     <div class="container-wide cta-panel" data-reveal>
       <p class="eyebrow">BUILD THE FIRST TEN</p>
-      <h2>最初の10人を、一緒につくる。</h2>
-      <p>受講希望、大学・学校との連携、企業協賛、課題提供について相談を受け付けています。</p>
+      <h2>最初の10人に、場所と課題を。</h2>
+      <p>受講希望、大学・学校との連携、企業協賛、会場提供、課題提供について相談を受け付けています。</p>
       <a class="button button-primary" href="/contact/">相談内容を送る <span aria-hidden="true">↗</span></a>
     </div>
   </section>
@@ -85,13 +85,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
   .academy-hero { position: relative; overflow: hidden; padding: calc(var(--header-height) + 92px) 0 100px; color: white; background: var(--blue); }
-  .academy-head { position: relative; z-index: 1; }
+  .academy-hero::after { position: absolute; z-index: 0; top: 10%; right: -5%; width: 57%; height: 76%; border: 1px solid rgba(255,255,255,.24); border-radius: 54% 0 0 46% / 64% 0 0 48%; background: linear-gradient(90deg, rgba(22,136,206,.52), rgba(4,71,142,.08)), url('/images/talent-project.webp') center / cover; box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); content: ""; opacity: .7; }
+  .academy-head { position: relative; z-index: 2; }
   .academy-head .eyebrow { color: var(--tide); }
   .academy-head h1 { margin: 0; font-size: clamp(74px,10vw,138px); font-weight: 500; letter-spacing: -.1em; line-height: .88; }
   .academy-head h1 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; font-weight: 500; }
   .academy-lead { display: flex; gap: 50px; align-items: flex-end; justify-content: space-between; margin: 62px 0 0 30%; }
   .academy-lead p { max-width: 600px; margin: 0; color: rgba(255,255,255,.66); line-height: 2; }
-  .academy-lines { position: absolute; inset: 0; pointer-events: none; }
+  .academy-lines { position: absolute; z-index: 1; inset: 0; pointer-events: none; }
   .academy-lines i { position: absolute; top: 54%; left: 70%; width: 48vw; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; transform: translate(-50%,-50%); }
   .academy-lines i:nth-child(2) { width: 64vw; }
   .academy-lines i:nth-child(3) { width: 80vw; }
@@ -141,6 +142,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   @media (max-width: 680px) {
     .academy-hero { padding-top: calc(var(--header-height) + 70px); }
+    .academy-hero::after { top: auto; right: -46%; bottom: -4%; width: 118%; height: 50%; opacity: .42; }
     .academy-head h1 { font-size: clamp(54px,14vw,66px); }
     .academy-lead { align-items: flex-start; flex-direction: column; margin-top: 44px; }
     .academy-lead .button { width: 100%; }

@@ -457,6 +457,7 @@ p, h1, h2, h3, h4, ul, ol, blockquote { margin-top: 0; }
 .brand-footer { margin-bottom: 28px; }
 .footer-brand-block > p { max-width: 460px; margin-bottom: 12px; color: white; font-family: "Noto Serif JP", serif; font-size: 18px; }
 .footer-brand-block small { color: rgba(255,255,255,.42); font-size: 9px; letter-spacing: .14em; }
+.footer-brand-block .footer-visual-note { display: block; max-width: 500px; margin-top: 16px; line-height: 1.8; letter-spacing: .02em; }
 .footer-column { display: flex; flex-direction: column; gap: 11px; }
 .footer-column h2 { margin-bottom: 12px; color: var(--tide); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
 .footer-column a { color: rgba(255,255,255,.62); font-size: 12px; }

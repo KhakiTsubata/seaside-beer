@@ -9,14 +9,14 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month:
 
 <BaseLayout
   title="Journal｜SeasideBeer"
-  description="企業のAI導入、AI研修、人材育成、仕事とAIについて、SeasideBeerが現場で必要になる判断を記録します。"
+  description="企業のAI導入、実務研修、若者のAI人材育成について、SeasideBeerが現場で決めたことと試したことを記録します。"
   image="/og.png"
 >
   <section class="page-hero journal-hero">
     <div class="container-wide journal-title">
       <p class="eyebrow">JOURNAL / INSIGHTS & NOTES</p>
-      <h1>考えたことを、<br /><em>仕事へ返す。</em></h1>
-      <p class="lead">ツールのニュースではなく、企業導入、研修設計、人材育成で実際に決めることを記録します。</p>
+      <h1>現場で決めたことを、<br /><em>残していく。</em></h1>
+      <p class="lead">新しいツールの紹介より、どの仕事を任せたか、研修で何を完成させたか、若者の作品をどう企業へ見せるかを書きます。</p>
     </div>
   </section>
 
@@ -39,15 +39,15 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month:
   <section class="section section-compact section-cloud">
     <div class="container-wide cta-panel" data-reveal>
       <p class="eyebrow">SHARE A QUESTION</p>
-      <h2>現場の疑問を、次の記事へ。</h2>
-      <p>同じ悩みを持つ企業や教育関係者へ共有できる形に整えます。会社名や機密情報は公開しません。</p>
+      <h2>いま困っていることを、次の記事へ。</h2>
+      <p>会社名や機密情報は出さず、同じ悩みを持つ企業や教育関係者が使える形で考えます。</p>
       <a class="button button-primary" href="/contact/">テーマを送る <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .journal-hero::before { background: radial-gradient(circle at 38% 35%, #ff9a69 0, var(--sunset) 20%, var(--blue) 52%, rgba(7,19,31,0) 72%); }
+  .journal-hero::before { top: -18%; right: -5%; width: min(62vw,880px); aspect-ratio: 1.55; border-radius: 52% 0 0 48% / 62% 0 0 52%; background: linear-gradient(90deg, rgba(206,245,255,.18), rgba(4,71,142,.08)), url('/images/talent-detail.webp') center / cover; box-shadow: inset 0 0 0 1px rgba(255,255,255,.5), 0 28px 90px rgba(4,71,142,.1); opacity: .45; }
   .journal-title { position: relative; z-index: 1; }
   .journal-title h1 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; }
   .entries-section { padding: clamp(100px,13vw,180px) 0; background: var(--paper); }

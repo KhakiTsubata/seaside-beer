@@ -2,7 +2,7 @@ export const site = {
   name: 'SeasideBeer',
   title: 'SeasideBeer｜AIと、地域のあいだに。',
   description:
-    '松山を拠点に、企業のAI導入・AI研修と、若者のAI人材育成を行うSeasideBeer。AIを使える人ではなく、仕事を変えられる人と仕組みをつくります。',
+    '松山で、企業のAI導入・実務研修と、若者のAI人材育成を行うSeasideBeer。実際の仕事と、企業に見せられる成果物をつくります。',
   email: 'seasidebeer.setouchi@gmail.com',
   location: '愛媛県松山市',
   tagline: 'AIに仕事を任せて、海辺でビールでも飲もう。',

@@ -11,8 +11,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="container-wide corporate-head">
       <p class="eyebrow">01 / FOR BUSINESS</p>
       <div class="corporate-title">
-        <h1>AIを学ぶ日ではなく、<br /><em>仕事が一つ減る日</em>を。</h1>
-        <p>体験、研修、業務設計、制作、改善。知識を渡して終わらず、現場で使える仕組みまで一緒につくります。</p>
+        <h1>AIを学ぶ日ではなく、<br /><em>仕事が一つ<span class="mobile-break"><br /></span>減る日</em>を。</h1>
+        <p>実際の資料と業務を持ち込み、AIで一度動かす。誰がどこを確認するかを決め、翌週も使える手順まで一緒につくります。</p>
       </div>
       <div class="page-hero-actions">
         <a class="button button-primary" href="/contact/">企業向け支援を相談する <span aria-hidden="true">↗</span></a>
@@ -23,9 +23,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="service-thesis">
     <div class="container-wide thesis-grid">
       <p class="section-index" data-reveal>THE GAP</p>
-      <h2 data-reveal>研修の満足度と、<br />導入の成果は、<br /><em>別のものです。</em></h2>
+      <h2 data-reveal>翌週も、<br />その仕事で<br /><em>使われているか。</em></h2>
       <p data-reveal>
-        「便利だった」で終われば、翌週には元の仕事へ戻ります。対象業務、入力、確認、共有、改善までを決めて、初めてAIは現場の仕組みになります。
+        当日の驚きや満足度だけでは、仕事は変わりません。対象業務、入力する資料、確認する人、保存先まで決める。そこで初めて、AIが会社の手順に入ります。
       </p>
     </div>
   </section>
@@ -34,7 +34,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="container-wide">
       <header class="offer-head" data-reveal>
         <p class="section-index">WHAT WE DO</p>
-        <h2>必要な地点から、<br />始められます。</h2>
+        <h2>体験会からでも、<br />業務一つからでも。</h2>
       </header>
       <div class="offer-list">
         <article data-reveal><span>01</span><div><p>EXECUTIVE SESSION</p><h3>経営者・管理職向けAI体験</h3></div><p>自社の業務を題材に、何を任せ、何を人が判断するかを短時間で整理します。</p></article>
@@ -49,8 +49,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="container-wide method-grid">
       <header data-reveal>
         <p class="section-index">DELIVERY SYSTEM</p>
-        <h2>現場へ移る、<br /><em>4つの段階。</em></h2>
-        <p>大きな構想より、使える一つを先に。成果を確認してから次へ広げます。</p>
+        <h2>現場へ移す、<br /><em>4つの手順。</em></h2>
+        <p>最初から全社へ広げません。一つの仕事で時間と品質を確かめ、使えると分かってから次へ進みます。</p>
       </header>
       <ol class="method-list" data-reveal>
         <li><span>01 / FIND</span><strong>仕事を選ぶ</strong><p>時間、頻度、判断、機密性からAIへ渡す範囲を決める。</p></li>
@@ -76,18 +76,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="section section-compact">
     <div class="container-wide cta-panel" data-reveal>
       <p class="eyebrow">START WITH ONE WORKFLOW</p>
-      <h2>一番時間のかかる仕事を、一つ教えてください。</h2>
-      <p>研修が先か、制作が先か、まだ決まっていなくて構いません。対象業務と今の状態から整理します。</p>
+      <h2>毎週、時間を取られている仕事を一つ教えてください。</h2>
+      <p>研修か制作かを先に決める必要はありません。いまの手順と、完成させたいものから整理します。</p>
       <a class="button button-primary" href="/contact/">相談内容を送る <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .corporate-hero::before { background: radial-gradient(circle at 34% 34%, var(--tide) 0, var(--blue) 35%, rgba(32,87,245,.03) 70%); }
+  .corporate-hero::before { top: 8%; right: -4%; width: min(58vw,820px); aspect-ratio: 1.45; border: 1px solid rgba(255,255,255,.7); border-radius: 52% 0 0 48% / 68% 0 0 42%; background: linear-gradient(90deg, rgba(202,243,255,.28), rgba(4,71,142,.12)), url('/images/workshop-business.webp') center / cover; box-shadow: inset 0 0 0 1px rgba(255,255,255,.34), 0 24px 80px rgba(4,71,142,.1); opacity: .48; }
+  .corporate-hero::after { position: absolute; z-index: 0; inset: 0; background: linear-gradient(90deg, rgba(215,246,255,.96) 0%, rgba(215,246,255,.86) 48%, rgba(215,246,255,.16) 76%); content: ""; pointer-events: none; }
   .corporate-head { position: relative; z-index: 1; }
   .corporate-title { display: grid; grid-template-columns: 1.3fr .7fr; gap: 70px; align-items: end; }
   .corporate-title h1 { margin: 0; }
+  .mobile-break { display: none; }
   .corporate-title h1 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; font-weight: 500; }
   .corporate-title > p { max-width: 480px; margin: 0 0 12px; color: var(--ink-700); line-height: 2; }
   .service-thesis { padding: clamp(110px,15vw,220px) 0; background: var(--bone); }
@@ -141,5 +143,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     .deliverable-grid { grid-template-columns: 1fr; }
     .deliverable-grid div { min-height: 180px; }
     .deliverable-grid strong { margin-top: 74px; }
+  }
+  @media (max-width: 680px) {
+    .mobile-break { display: inline; }
   }
 </style>
