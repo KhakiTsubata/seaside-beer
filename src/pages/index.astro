@@ -1,0 +1,430 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const insights = (await getCollection('insights', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
+const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
+---
+
+<BaseLayout image="/og.png">
+  <section class="water-hero" aria-labelledby="home-title">
+    <div class="hero-caustics" aria-hidden="true"></div>
+    <div class="hero-wash" aria-hidden="true"></div>
+
+    <div class="hero-collage" aria-hidden="true">
+      <div class="hero-photo hero-photo-city"></div>
+      <div class="hero-photo hero-photo-workshop"></div>
+      <div class="hero-photo hero-photo-coast"></div>
+      <i class="water-ribbon ribbon-one"></i>
+      <i class="water-ribbon ribbon-two"></i>
+    </div>
+
+    <div class="container-wide hero-layout">
+      <div class="hero-copy">
+        <p class="hero-location">MATSUYAMA / EHIME</p>
+        <h1 id="home-title"><span>AIと、</span><span>地域のあいだに。</span></h1>
+        <p class="hero-lead">
+          企業には、AIで減らせる仕事がある。若者には、AIとつくれる仕事がある。<br />
+          SeasideBeerは、その両方を松山で動かします。
+        </p>
+
+        <nav class="hero-services" aria-label="主なサービス">
+          <a href="/services/corporate/">
+            <span class="service-number">01</span>
+            <strong>企業支援</strong>
+            <i aria-hidden="true">→</i>
+          </a>
+          <a href="/services/corporate/">
+            <span class="service-number">02</span>
+            <strong>AI研修</strong>
+            <i aria-hidden="true">→</i>
+          </a>
+          <a href="/academy/">
+            <span class="service-number">03</span>
+            <strong>若者育成</strong>
+            <i aria-hidden="true">→</i>
+          </a>
+        </nav>
+
+        <a class="hero-action" href="/insights/">活動を見る <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="matsuyama-badge" aria-label="活動拠点 松山">
+      <span>EHIME</span>
+      <strong>松山</strong>
+    </div>
+  </section>
+
+  <section class="thought-section" id="mission">
+    <div class="container-wide thought-grid">
+      <div class="section-marker" data-reveal>
+        <span>01</span>
+        <p>OUR POINT OF VIEW</p>
+      </div>
+      <div class="thought-copy" data-reveal>
+        <p class="jp-kicker">AIは、空いた時間の使い道まで決めてくれない。</p>
+        <h2>減らした仕事の先に、<br /><em>何を増やすか。</em></h2>
+        <div class="thought-note">
+          <p>
+            調べる、まとめる、下書きをつくる。AIへ任せられる作業は増えました。
+            私たちがつくりたいのは、ただ速く働く会社ではありません。顧客と話す時間、若者を育てる時間、新しい商売を考える時間を、松山の企業へ戻します。
+          </p>
+          <a class="water-link" href="/about/">SeasideBeerについて <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="container-wide">
+      <header class="water-heading" data-reveal>
+        <div><span>02</span><p>WHAT WE DO</p></div>
+        <h2>研修の日に、<br /><em>一つ完成させる。</em></h2>
+      </header>
+
+      <div class="service-current">
+        <article class="service-card card-business" data-reveal>
+          <div class="service-card-top"><span>FOR BUSINESS</span><b>01</b></div>
+          <div>
+            <h3>企業向けAI支援</h3>
+            <p>時間がかかっている仕事を一つ選び、AIで試し、現場で使える手順まで残します。</p>
+          </div>
+          <a href="/services/corporate/">支援内容を見る <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="service-card card-training" id="training" data-reveal>
+          <div class="service-card-top"><span>PRACTICAL TRAINING</span><b>02</b></div>
+          <div>
+            <h3>実務で使うAI研修</h3>
+            <p>参加者の実際の資料や業務を持ち込み、研修中に成果物を一つ完成させます。</p>
+          </div>
+          <a href="/contact/">研修を相談する <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="service-card card-talent" data-reveal>
+          <div class="service-card-top"><span>FOR YOUNG TALENT</span><b>03</b></div>
+          <div>
+            <h3>若者AI人材育成</h3>
+            <p>HP、資料、小さなアプリ。企業に見せ、自分で説明できる制作物を持つ10人を育てます。</p>
+          </div>
+          <a href="/academy/">育成構想を見る <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof-section">
+    <div class="proof-water" aria-hidden="true"></div>
+    <div class="container-wide proof-grid">
+      <div class="proof-number" data-reveal>
+        <span>FIRST MILESTONE</span>
+        <strong>10</strong>
+        <small>PEOPLE WITH PROOF</small>
+      </div>
+      <div class="proof-copy" data-reveal>
+        <p class="section-index">企業に見せられる10人</p>
+        <h2>10人分の作品を、<br /><em>最初の実績</em>にする。</h2>
+        <p>
+          一人ずつ完成物を持ち、どこをAIへ任せ、どこを自分で直したか説明する。最初の10人がそこまで届いたら、企業、大学、地域へ見せます。
+        </p>
+        <ol>
+          <li><span>01</span>課題を選ぶ</li>
+          <li><span>02</span>AIと形にする</li>
+          <li><span>03</span>人が直す</li>
+          <li><span>04</span>企業へ見せる</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="journal-section">
+    <div class="container-wide">
+      <header class="water-heading journal-heading" data-reveal>
+        <div><span>03</span><p>ACTIVITY / JOURNAL</p></div>
+        <h2>動いていることを、<br /><em>途中から公開する。</em></h2>
+        <a class="water-link" href="/insights/">すべて見る <span aria-hidden="true">→</span></a>
+      </header>
+
+      <div class="journal-grid">
+        {insights.map((entry, index) => (
+          <a class="journal-card" href={`/insights/${entry.id}/`} data-reveal>
+            <div class={`journal-visual visual-${index + 1}`} aria-hidden="true">
+              <span>0{index + 1}</span>
+            </div>
+            <div class="journal-meta">
+              <span>{entry.data.category}</span>
+              <time datetime={entry.data.publishedAt.toISOString()}>{dateFormatter.format(entry.data.publishedAt)}</time>
+            </div>
+            <h3>{entry.data.title}</h3>
+            <span class="journal-arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+      <p class="visual-disclaimer">このページの写真は、事業の方向を伝えるために生成したコンセプトビジュアルです。実績写真ではありません。実際の講座や支援の様子は、公開許可が取れたものから掲載します。</p>
+    </div>
+  </section>
+
+  <section class="home-cta">
+    <div class="container-wide home-cta-inner" data-reveal>
+      <p>START WITH ONE REAL TASK.</p>
+      <h2>AIの相談は、<br /><em>仕事の話から。</em></h2>
+      <a href="/contact/">相談内容を送る <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .water-hero {
+    position: relative;
+    min-height: max(790px, 100svh);
+    overflow: hidden;
+    color: var(--ocean);
+    background:
+      radial-gradient(circle at 16% 20%, rgba(255,255,255,.96) 0, rgba(255,255,255,.54) 20%, transparent 44%),
+      linear-gradient(135deg, #dff8ff 0%, #c8f1ff 42%, #a9e9fb 100%);
+  }
+
+  .hero-caustics {
+    position: absolute;
+    z-index: 0;
+    inset: -18% -10% auto 38%;
+    height: 62%;
+    opacity: .54;
+    background:
+      radial-gradient(ellipse at 50% 50%, transparent 52%, rgba(255,255,255,.72) 54%, transparent 59%) 0 0 / 130px 92px,
+      radial-gradient(ellipse at 50% 50%, transparent 54%, rgba(255,255,255,.48) 56%, transparent 61%) 48px 26px / 170px 118px;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+    transform: rotate(-8deg);
+    animation: caustic-drift 16s ease-in-out infinite alternate;
+  }
+
+  @keyframes caustic-drift { to { transform: translate3d(-3%, 4%, 0) rotate(-5deg) scale(1.05); } }
+
+  .hero-wash {
+    position: absolute;
+    z-index: 2;
+    inset: 0 auto 0 0;
+    width: 57%;
+    background: linear-gradient(90deg, rgba(223,248,255,.98) 0%, rgba(223,248,255,.9) 58%, rgba(223,248,255,0) 100%);
+    pointer-events: none;
+  }
+
+  .hero-layout {
+    position: relative;
+    z-index: 4;
+    display: grid;
+    min-height: max(790px, 100svh);
+    align-items: center;
+    padding-top: calc(var(--header-height) + 54px);
+    padding-bottom: 90px;
+  }
+
+  .hero-copy { width: min(54%, 720px); padding-top: 20px; }
+  .hero-location { margin-bottom: 34px; color: rgba(4,71,142,.56); font-size: 10px; font-weight: 700; letter-spacing: .22em; }
+  .hero-copy h1 { margin-bottom: 28px; font-family: "Noto Serif JP", serif; font-size: clamp(62px, 5.8vw, 92px); font-weight: 500; letter-spacing: -.075em; line-height: 1.24; }
+  .hero-copy h1 span { display: block; }
+  .hero-copy h1 span:last-child { white-space: nowrap; }
+  .hero-lead { max-width: 570px; margin-bottom: 34px; color: rgba(4,42,83,.7); font-size: 14px; line-height: 2; }
+
+  .hero-services { display: grid; width: min(100%, 560px); grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+  .hero-services a {
+    display: flex;
+    min-height: 172px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 18px 18px;
+    border: 1px solid rgba(255,255,255,.82);
+    border-radius: 46% 54% 45% 55% / 38% 40% 60% 62%;
+    background: rgba(255,255,255,.62);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 18px 50px rgba(7,78,144,.06);
+    backdrop-filter: blur(14px);
+    transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+  }
+  .hero-services a:nth-child(2) { border-radius: 52% 48% 58% 42% / 44% 56% 44% 56%; }
+  .hero-services a:nth-child(3) { border-radius: 44% 56% 48% 52% / 55% 42% 58% 45%; }
+  .hero-services a:hover { background: rgba(255,255,255,.86); box-shadow: 0 24px 60px rgba(7,78,144,.12); transform: translateY(-7px); }
+  .service-number { color: rgba(4,71,142,.52); font-size: 9px; font-weight: 700; letter-spacing: .14em; }
+  .hero-services strong { align-self: center; font-family: "Noto Serif JP", serif; font-size: clamp(15px,1.35vw,20px); font-weight: 600; white-space: nowrap; }
+  .hero-services i { display: grid; width: 32px; height: 32px; place-items: center; align-self: center; border-radius: 50%; color: white; background: var(--ocean); font-size: 14px; font-style: normal; }
+  .hero-action { display: inline-flex; min-height: 54px; gap: 42px; align-items: center; margin-top: 30px; padding: 0 14px 0 24px; border-radius: 999px; color: white; background: var(--ocean); font-family: "Noto Serif JP", serif; font-size: 15px; font-weight: 600; letter-spacing: .04em; box-shadow: 0 16px 40px rgba(4,71,142,.18); transition: transform .2s ease, background .2s ease; }
+  .hero-action:hover { background: #07376f; transform: translateY(-3px); }
+  .hero-action span { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; color: var(--ocean); background: white; }
+
+  .hero-collage { position: absolute; z-index: 1; inset: 0; pointer-events: none; }
+  .hero-photo { position: absolute; overflow: hidden; background-repeat: no-repeat; background-size: cover; box-shadow: inset 0 0 0 1px rgba(255,255,255,.46); }
+  .hero-photo::after { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(177,238,255,.08), rgba(4,71,142,.08)); content: ""; mix-blend-mode: color; }
+  .hero-photo-city::before { position: absolute; z-index: 1; inset: 0 auto 0 0; width: 19%; background: linear-gradient(90deg, #c8f1ff 0%, rgba(200,241,255,.82) 38%, transparent 100%); content: ""; }
+  .hero-photo-city { top: 10%; right: -5%; width: 56%; height: 34%; border-radius: 52% 0 0 50% / 72% 0 0 44%; background-image: url('/images/matsuyama-visual.webp'); background-position: 58% 48%; transform: rotate(-1.8deg); }
+  .hero-photo-workshop { top: 39%; right: -6%; width: 55%; height: 39%; border-radius: 54% 0 0 48% / 50% 0 0 58%; background-image: url('/images/workshop-youth.webp'); background-position: 48% 48%; transform: rotate(1deg); }
+  .hero-photo-coast { right: -5%; bottom: -8%; left: 7%; height: 34%; border-radius: 53% 47% 0 0 / 34% 44% 0 0; background-image: url('/images/setouchi-water.webp'); background-position: 50% 54%; transform: rotate(-1.5deg); opacity: .92; }
+  .water-ribbon { position: absolute; display: block; border: 1px solid rgba(255,255,255,.62); border-radius: 50%; background: rgba(198,244,255,.17); box-shadow: inset 0 0 40px rgba(255,255,255,.2); backdrop-filter: blur(3px); }
+  .ribbon-one { right: -9%; bottom: 9%; width: 112%; height: 26%; transform: rotate(5deg); }
+  .ribbon-two { right: -18%; bottom: -2%; width: 82%; height: 18%; transform: rotate(-7deg); }
+
+  .matsuyama-badge {
+    position: absolute;
+    z-index: 5;
+    right: 4.5%;
+    bottom: 8%;
+    display: grid;
+    width: clamp(130px, 12vw, 184px);
+    aspect-ratio: 1;
+    place-content: center;
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 50%;
+    color: var(--ocean);
+    background: rgba(235,251,255,.72);
+    box-shadow: inset 0 0 36px rgba(255,255,255,.72), 0 20px 70px rgba(4,71,142,.12);
+    text-align: center;
+    backdrop-filter: blur(15px);
+  }
+  .matsuyama-badge span { font-size: 8px; font-weight: 700; letter-spacing: .24em; }
+  .matsuyama-badge strong { font-family: "Noto Serif JP", serif; font-size: clamp(30px,3vw,44px); font-weight: 500; letter-spacing: .06em; }
+
+  .thought-section { padding: clamp(110px,14vw,210px) 0; background: var(--paper); }
+  .thought-grid { display: grid; grid-template-columns: .28fr 1fr; gap: clamp(60px,10vw,160px); }
+  .section-marker { display: flex; gap: 18px; align-items: flex-start; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ocean); }
+  .section-marker span { font-size: 12px; font-weight: 700; }
+  .section-marker p { margin: 0; font-size: 9px; font-weight: 700; letter-spacing: .18em; }
+  .jp-kicker { margin-bottom: 24px; color: var(--sea-700); font-family: "Noto Serif JP", serif; font-size: 18px; }
+  .thought-copy h2,
+  .water-heading h2,
+  .proof-copy h2,
+  .home-cta h2 { margin-bottom: 54px; font-size: clamp(52px,7.5vw,104px); font-weight: 500; letter-spacing: -.075em; line-height: 1.12; }
+  .thought-copy h2 em,
+  .water-heading h2 em,
+  .proof-copy h2 em,
+  .home-cta h2 em { color: var(--sea-600); font-family: "Noto Serif JP", serif; font-style: normal; font-weight: 500; }
+  .thought-note { display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: end; max-width: 880px; margin-left: auto; }
+  .thought-note p { margin: 0; color: var(--ink-600); line-height: 2.05; }
+  .water-link { display: inline-flex; gap: 22px; align-items: center; padding-bottom: 8px; border-bottom: 1px solid currentColor; color: var(--ocean); font-size: 12px; font-weight: 700; white-space: nowrap; }
+  .water-link span { transition: transform .2s ease; }
+  .water-link:hover span { transform: translateX(5px); }
+
+  .services-section { padding: clamp(100px,12vw,180px) 0; background: var(--cloud); }
+  .water-heading { display: grid; grid-template-columns: .28fr 1fr; gap: clamp(60px,10vw,160px); margin-bottom: 80px; }
+  .water-heading > div { display: flex; gap: 18px; align-items: flex-start; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ocean); }
+  .water-heading > div span { font-size: 12px; font-weight: 700; }
+  .water-heading > div p { margin: 0; font-size: 9px; font-weight: 700; letter-spacing: .18em; }
+  .water-heading h2 { margin: 0; }
+  .service-current { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+  .service-card { display: flex; min-height: 500px; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 28px; border: 1px solid rgba(255,255,255,.9); background: rgba(255,255,255,.74); box-shadow: 0 24px 80px rgba(4,71,142,.07); backdrop-filter: blur(8px); }
+  .card-business { border-radius: 48% 16px 16px 16px / 25% 16px 16px 16px; }
+  .card-training { border-radius: 16px 48% 16px 16px / 16px 24% 16px 16px; }
+  .card-talent { border-radius: 16px 16px 52% 16px / 16px 16px 28% 16px; }
+  .service-card-top { display: flex; align-items: center; justify-content: space-between; color: var(--sea-700); font-size: 9px; font-weight: 700; letter-spacing: .16em; }
+  .service-card-top b { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 50%; color: white; background: var(--sea-600); font-size: 11px; }
+  .service-card h3 { margin-bottom: 18px; font-family: "Noto Serif JP", serif; font-size: clamp(28px,3vw,42px); font-weight: 600; letter-spacing: -.04em; }
+  .service-card p { margin: 0; color: var(--ink-600); font-size: 13px; line-height: 2; }
+  .service-card > a { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid var(--line); color: var(--ocean); font-size: 12px; font-weight: 700; }
+
+  .proof-section { position: relative; overflow: hidden; padding: clamp(110px,14vw,200px) 0; color: white; background: var(--ocean); }
+  .proof-water { position: absolute; inset: 0; opacity: .42; background: radial-gradient(circle at 22% 20%, rgba(109,224,255,.82), transparent 32%), radial-gradient(circle at 85% 80%, rgba(125,235,255,.38), transparent 35%); }
+  .proof-water::after { position: absolute; right: -18%; bottom: -62%; width: 90%; aspect-ratio: 2; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; box-shadow: 0 0 0 70px rgba(255,255,255,.025), 0 0 0 140px rgba(255,255,255,.02); content: ""; transform: rotate(-9deg); }
+  .proof-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(70px,10vw,150px); align-items: center; }
+  .proof-number > span,
+  .proof-number small { display: block; color: var(--foam); font-size: 9px; font-weight: 700; letter-spacing: .2em; }
+  .proof-number strong { display: block; margin: -34px 0 -18px; color: white; font-size: clamp(220px,31vw,460px); font-weight: 500; letter-spacing: -.15em; line-height: 1; }
+  .proof-copy .section-index { color: var(--foam); }
+  .proof-copy h2 { margin: 0; font-size: clamp(48px,6.2vw,88px); }
+  .proof-copy h2 em { color: var(--foam); }
+  .proof-copy > p:not(.section-index) { max-width: 620px; margin: 34px 0 44px; color: rgba(255,255,255,.68); line-height: 2; }
+  .proof-copy ol { display: grid; grid-template-columns: repeat(2,1fr); margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.25); list-style: none; }
+  .proof-copy li { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.25); font-size: 13px; }
+  .proof-copy li:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.25); }
+  .proof-copy li:nth-child(even) { padding-left: 18px; }
+  .proof-copy li span { margin-right: 16px; color: var(--foam); font-size: 9px; }
+
+  .journal-section { padding: clamp(110px,13vw,190px) 0; background: var(--paper); }
+  .journal-heading { grid-template-columns: .28fr 1fr auto; align-items: end; }
+  .journal-heading h2 { margin: 0; }
+  .journal-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+  .journal-card { position: relative; display: block; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+  .journal-visual { position: relative; display: flex; height: 260px; align-items: flex-end; padding: 22px; overflow: hidden; color: white; background-repeat: no-repeat; background-size: cover; transition: transform .35s ease, border-radius .35s ease; }
+  .visual-1 { border-radius: 44% 10px 10px 10px / 38% 10px 10px 10px; background-image: url('/images/workshop-business.webp'); background-position: center; }
+  .visual-2 { border-radius: 10px 46% 10px 10px / 10px 42% 10px 10px; background-image: url('/images/talent-detail.webp'); background-position: 56% center; }
+  .visual-3 { border-radius: 10px 10px 46% 10px / 10px 10px 36% 10px; background-image: url('/images/setouchi-aerial.webp'); background-position: center; }
+  .journal-visual::after { position: absolute; inset: 0; background: linear-gradient(transparent 55%, rgba(4,71,142,.62)); content: ""; }
+  .journal-visual span { position: relative; z-index: 1; font-size: 10px; font-weight: 700; letter-spacing: .18em; }
+  .journal-card:hover .journal-visual { border-radius: 10px; transform: translateY(-5px); }
+  .journal-meta { display: flex; justify-content: space-between; margin: 20px 0 14px; color: var(--sea-700); font-size: 9px; font-weight: 700; letter-spacing: .08em; }
+  .journal-card h3 { max-width: 92%; margin: 0; font-size: clamp(19px,2vw,26px); letter-spacing: -.035em; line-height: 1.5; }
+  .journal-arrow { position: absolute; right: 0; bottom: 28px; color: var(--sea-600); font-size: 22px; }
+  .visual-disclaimer { margin: 28px 0 0; color: var(--muted); font-size: 10px; }
+
+  .home-cta { position: relative; overflow: hidden; padding: clamp(100px,13vw,190px) 0; color: var(--ocean); background: linear-gradient(135deg, #dff8ff, #aeeafa); }
+  .home-cta::before { position: absolute; right: -12%; bottom: -90%; width: 74%; aspect-ratio: 1.8; border: 1px solid rgba(255,255,255,.72); border-radius: 50%; box-shadow: 0 0 0 70px rgba(255,255,255,.12), 0 0 0 140px rgba(255,255,255,.08); content: ""; }
+  .home-cta-inner { position: relative; z-index: 1; }
+  .home-cta p { margin-bottom: 28px; color: var(--sea-700); font-size: 9px; font-weight: 700; letter-spacing: .2em; }
+  .home-cta h2 { max-width: 1040px; margin-bottom: 46px; }
+  .home-cta > div > a { display: inline-flex; min-height: 58px; gap: 40px; align-items: center; padding: 0 16px 0 26px; border-radius: 999px; color: white; background: var(--ocean); font-size: 13px; font-weight: 700; }
+  .home-cta > div > a span { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 50%; color: var(--ocean); background: white; }
+
+  @media (max-width: 1060px) {
+    .water-hero,
+    .hero-layout { min-height: 860px; }
+    .hero-copy { width: 54%; }
+    .hero-photo-city { width: 52%; }
+    .hero-photo-workshop { width: 53%; }
+    .hero-services a { min-height: 150px; }
+    .matsuyama-badge { right: 2%; }
+    .thought-grid,
+    .water-heading { grid-template-columns: .2fr 1fr; gap: 60px; }
+    .service-current { gap: 12px; }
+    .service-card { min-height: 460px; padding: 24px; }
+    .journal-heading { grid-template-columns: .2fr 1fr; }
+    .journal-heading > a { grid-column: 2; justify-self: start; }
+  }
+
+  @media (max-width: 760px) {
+    .water-hero { min-height: 1060px; }
+    .hero-layout { min-height: 1060px; align-items: start; padding-top: calc(var(--header-height) + 72px); }
+    .hero-copy { width: 100%; }
+    .hero-location { margin-bottom: 22px; }
+    .hero-copy h1 { max-width: 96%; margin-bottom: 20px; font-size: clamp(48px,13vw,70px); line-height: 1.22; }
+    .hero-copy h1 span:last-child { white-space: normal; }
+    .hero-lead { max-width: 92%; font-size: 12px; line-height: 1.9; }
+    .hero-services { gap: 8px; }
+    .hero-services a { min-height: 132px; padding: 15px 10px 12px; }
+    .hero-services strong { font-size: 13px; }
+    .hero-services i { width: 28px; height: 28px; }
+    .hero-action { margin-top: 22px; }
+    .hero-wash { width: 100%; height: 58%; background: linear-gradient(180deg, rgba(223,248,255,.98) 0%, rgba(223,248,255,.9) 74%, rgba(223,248,255,0)); }
+    .hero-photo-city { display: none; }
+    .hero-photo-workshop { top: auto; right: -24%; bottom: 19%; width: 116%; height: 31%; border-radius: 46% 0 0 48% / 52% 0 0 48%; background-position: 48% 50%; background-size: cover; }
+    .hero-photo-coast { right: -20%; bottom: -5%; left: -25%; height: 28%; background-position: 50% 54%; background-size: cover; }
+    .ribbon-one { bottom: 8%; height: 20%; }
+    .ribbon-two { bottom: -1%; }
+    .matsuyama-badge { right: 5%; bottom: 4%; width: 112px; }
+
+    .thought-grid,
+    .water-heading { grid-template-columns: 1fr; gap: 34px; }
+    .section-marker,
+    .water-heading > div { width: 180px; }
+    .thought-copy h2,
+    .water-heading h2,
+    .home-cta h2 { font-size: clamp(43px,12vw,64px); }
+    .thought-note { grid-template-columns: 1fr; gap: 34px; }
+    .thought-note .water-link { justify-self: start; }
+    .service-current,
+    .journal-grid { grid-template-columns: 1fr; }
+    .service-card { min-height: 390px; border-radius: 72px 16px 16px 16px; }
+    .service-card:nth-child(even) { border-radius: 16px 72px 16px 16px; }
+    .proof-grid { grid-template-columns: 1fr; gap: 34px; }
+    .proof-number strong { margin: -18px 0 -10px; font-size: min(68vw,300px); }
+    .proof-copy h2 { font-size: clamp(43px,12vw,62px); }
+    .journal-heading { grid-template-columns: 1fr; }
+    .journal-heading > a { grid-column: auto; }
+    .journal-visual { height: 240px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-caustics { animation: none; }
+  }
+</style>

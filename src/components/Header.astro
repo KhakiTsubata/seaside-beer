@@ -1,0 +1,84 @@
+---
+import { primaryNav, site } from '../data/site';
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<header class="site-header" data-header>
+  <div class="header-inner container-wide">
+    <a class="brand" href="/" aria-label="SeasideBeer トップページ">
+      <img class="brand-mark" src="/logo-icon.png" width="240" height="240" alt="" />
+      <span class="brand-word">SeasideBeer</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+      aria-label="メニューを開く"
+      data-nav-toggle
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-navigation" aria-label="メインメニュー" data-nav>
+      <div class="nav-surface container-wide">
+        <div class="nav-heading">
+          <p>MENU</p>
+          <span>AI × WORK × MATSUYAMA</span>
+        </div>
+        <div class="nav-links">
+          {primaryNav.map((item, index) => (
+            <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>
+              <span>0{index + 1}</span>
+              <strong>{item.label}</strong>
+              <i aria-hidden="true">↗</i>
+            </a>
+          ))}
+        </div>
+        <div class="nav-footer">
+          <p>{site.tagline}</p>
+          <a href="/contact/">相談する <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('[data-header]');
+  const toggle = document.querySelector('[data-nav-toggle]');
+  const nav = document.querySelector('[data-nav]');
+
+  const closeMenu = (restoreFocus = false) => {
+    if (!(toggle instanceof HTMLButtonElement) || !(nav instanceof HTMLElement)) return;
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'メニューを開く');
+    nav.classList.remove('is-open');
+    document.body.removeAttribute('data-menu-open');
+    if (restoreFocus) toggle.focus();
+  };
+
+  if (header && toggle instanceof HTMLButtonElement && nav instanceof HTMLElement) {
+    const syncHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 12);
+    syncHeader();
+    window.addEventListener('scroll', syncHeader, { passive: true });
+
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+      nav.classList.toggle('is-open', open);
+      document.body.toggleAttribute('data-menu-open', open);
+      if (open) nav.querySelector<HTMLElement>('a')?.focus();
+    });
+
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu(false)));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') closeMenu(true);
+    });
+  }
+</script>

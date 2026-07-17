@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="AI人材育成｜SeasideBeer"
+  description="HP、資料、小さなアプリを完成させ、企業へ見せて説明できる若者を松山から育てる、SeasideBeerの実践講座です。"
+  image="/og.png"
+>
+  <section class="academy-hero">
+    <div class="academy-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="container-wide academy-head">
+      <p class="eyebrow">02 / FOR TALENT</p>
+      <h1>作品を持つ、<br /><em>最初の10人</em>。</h1>
+      <div class="academy-lead">
+        <p>HP、資料、小さなアプリ。完成したURLを企業へ見せ、どこをAIに任せ、どこを自分で直したか説明する。2時間×4回で、そこを目指します。</p>
+        <a class="button button-primary" href="/contact/">講座・連携を相談する <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="target-section">
+    <div class="container-wide target-grid">
+      <div class="target-number" data-reveal><span>FIRST MILESTONE</span><strong>10</strong><small>PEOPLE WITH PROOF</small></div>
+      <div class="target-copy" data-reveal>
+        <p class="section-index">THE FIRST GOAL</p>
+        <h2>10人分の作品を、<br /><em>最初の実績</em>に。</h2>
+        <p>一人ずつ完成物を持ち、制作の途中で何を考え、どう直したかを話せる。企業が実物を見て次の質問をできる状態を、最初の基準にします。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="curriculum-section">
+    <div class="container-wide">
+      <header data-reveal><p class="section-index">4 SESSIONS / 2 HOURS EACH</p><h2>作る。直す。<br />説明する。見せる。</h2></header>
+      <ol class="curriculum-list">
+        <li data-reveal><span>DAY 01</span><div><p>CHOOSE</p><h3>課題を選ぶ</h3></div><p>誰の、どんな困りごとを変えるのか。完成条件と見せる相手を決めます。</p></li>
+        <li data-reveal><span>DAY 02</span><div><p>BUILD</p><h3>AIと作る</h3></div><p>調査、文章、資料、Web、小さなアプリなど、実際に触れられる形へ進めます。</p></li>
+        <li data-reveal><span>DAY 03</span><div><p>EDIT</p><h3>人が直す</h3></div><p>誤り、弱さ、使いにくさを見つけ、自分の判断で品質を上げます。</p></li>
+        <li data-reveal><span>DAY 04</span><div><p>SHOW</p><h3>外へ見せる</h3></div><p>成果発表またはデモを行い、企業や地域の人から質問とフィードバックを受けます。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="output-section">
+    <div class="container-wide output-grid">
+      <header data-reveal><p class="section-index">OUTPUT FIRST</p><h2>修了後も見せられる、<br /><em>作品を残す。</em></h2></header>
+      <div class="output-system" data-reveal>
+        <article><span>WEB</span><strong>HP / LP / Portfolio</strong><i>↗</i></article>
+        <article><span>DOC</span><strong>企画書 / 営業資料 / Report</strong><i>↗</i></article>
+        <article><span>APP</span><strong>課題を解く小さな Web App</strong><i>↗</i></article>
+        <article><span>STORY</span><strong>AIと自分の判断を説明する制作記録</strong><i>↗</i></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="partner-section">
+    <div class="container-wide partner-grid">
+      <div data-reveal>
+        <p class="section-index">FOR PARTNERS</p>
+        <h2>受講料だけに頼らず、<br />地域で育てる。</h2>
+      </div>
+      <div class="partner-copy" data-reveal>
+        <p>企業、大学、行政、支援者に、講座協賛、会場、課題、発表の場を相談します。人材紹介を急がず、まずは学びと作品を安全に見せられる関係をつくります。</p>
+        <ul>
+          <li><span>01</span>講座への協賛・会場提供</li>
+          <li><span>02</span>匿名化した企業課題の提供</li>
+          <li><span>03</span>成果発表・デモデイへの参加</li>
+          <li><span>04</span>大学・行政との共同企画</li>
+        </ul>
+        <a class="button button-dark" href="/contact/">連携を相談する <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-compact">
+    <div class="container-wide cta-panel" data-reveal>
+      <p class="eyebrow">BUILD THE FIRST TEN</p>
+      <h2>最初の10人に、場所と課題を。</h2>
+      <p>受講希望、大学・学校との連携、企業協賛、会場提供、課題提供について相談を受け付けています。</p>
+      <a class="button button-primary" href="/contact/">相談内容を送る <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .academy-hero { position: relative; overflow: hidden; padding: calc(var(--header-height) + 92px) 0 100px; color: white; background: var(--blue); }
+  .academy-hero::after { position: absolute; z-index: 0; top: 10%; right: -5%; width: 57%; height: 76%; border: 1px solid rgba(255,255,255,.24); border-radius: 54% 0 0 46% / 64% 0 0 48%; background: linear-gradient(90deg, rgba(22,136,206,.52), rgba(4,71,142,.08)), url('/images/talent-project.webp') center / cover; box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); content: ""; opacity: .7; }
+  .academy-head { position: relative; z-index: 2; }
+  .academy-head .eyebrow { color: var(--tide); }
+  .academy-head h1 { margin: 0; font-size: clamp(74px,10vw,138px); font-weight: 500; letter-spacing: -.1em; line-height: .88; }
+  .academy-head h1 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; font-weight: 500; }
+  .academy-lead { display: flex; gap: 50px; align-items: flex-end; justify-content: space-between; margin: 62px 0 0 30%; }
+  .academy-lead p { max-width: 600px; margin: 0; color: rgba(255,255,255,.66); line-height: 2; }
+  .academy-lines { position: absolute; z-index: 1; inset: 0; pointer-events: none; }
+  .academy-lines i { position: absolute; top: 54%; left: 70%; width: 48vw; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; transform: translate(-50%,-50%); }
+  .academy-lines i:nth-child(2) { width: 64vw; }
+  .academy-lines i:nth-child(3) { width: 80vw; }
+  .academy-lines i:nth-child(4) { width: 96vw; }
+  .target-section { padding: clamp(100px,14vw,200px) 0; background: var(--bone); }
+  .target-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(60px,10vw,160px); align-items: center; }
+  .target-number span,
+  .target-number small { display: block; color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: .18em; }
+  .target-number strong { display: block; margin: -20px 0 -12px -.08em; color: var(--blue); font-size: clamp(190px,28vw,410px); font-weight: 500; letter-spacing: -.13em; line-height: 1; }
+  .target-copy h2 { margin: 0; font-size: clamp(52px,7.5vw,106px); font-weight: 500; letter-spacing: -.085em; line-height: 1; }
+  .target-copy h2 em { color: var(--blue); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .target-copy > p:last-child { max-width: 600px; margin: 38px 0 0; color: var(--ink-600); line-height: 2; }
+  .curriculum-section { padding: clamp(100px,13vw,180px) 0; background: var(--paper); }
+  .curriculum-section header { display: grid; grid-template-columns: .35fr 1fr; margin-bottom: 70px; }
+  .curriculum-section header h2 { margin: 0; font-size: clamp(52px,8vw,110px); font-weight: 500; letter-spacing: -.085em; line-height: 1; }
+  .curriculum-list { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+  .curriculum-list li { display: grid; grid-template-columns: 90px .8fr 1fr; gap: 30px; align-items: center; padding: 34px 0; border-bottom: 1px solid var(--line); }
+  .curriculum-list li > span,
+  .curriculum-list div p { color: var(--blue); font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+  .curriculum-list div p { margin-bottom: 8px; }
+  .curriculum-list h3 { margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -.04em; }
+  .curriculum-list li > p { margin: 0; color: var(--ink-600); font-size: 13px; }
+  .output-section { padding: clamp(100px,13vw,180px) 0; color: white; background: var(--ink); }
+  .output-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(60px,10vw,150px); }
+  .output-section .section-index { color: var(--tide); }
+  .output-section h2 { margin: 0; font-size: clamp(52px,7vw,94px); font-weight: 500; letter-spacing: -.08em; line-height: 1; }
+  .output-section h2 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .output-system { border-top: 1px solid var(--line-invert); }
+  .output-system article { display: grid; grid-template-columns: 70px 1fr auto; gap: 20px; align-items: center; padding: 28px 0; border-bottom: 1px solid var(--line-invert); }
+  .output-system span { color: var(--tide); font-size: 8px; letter-spacing: .14em; }
+  .output-system strong { font-size: 16px; font-weight: 500; }
+  .output-system i { font-size: 22px; font-style: normal; }
+  .partner-section { padding: clamp(100px,13vw,180px) 0; background: var(--tide); }
+  .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(60px,10vw,150px); }
+  .partner-section h2 { margin: 0; font-size: clamp(52px,7vw,96px); font-weight: 500; letter-spacing: -.08em; line-height: 1; }
+  .partner-copy > p { margin: 0 0 38px; line-height: 2; }
+  .partner-copy ul { margin: 0 0 40px; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+  .partner-copy li { padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .partner-copy li span { margin-right: 24px; color: var(--blue); font-size: 9px; }
+  @media (max-width: 900px) {
+    .academy-lead { margin-left: 0; }
+    .target-grid,
+    .output-grid,
+    .partner-grid { grid-template-columns: 1fr; }
+    .target-number { text-align: center; }
+    .target-number strong { font-size: min(60vw,390px); }
+  }
+  @media (max-width: 680px) {
+    .academy-hero { padding-top: calc(var(--header-height) + 70px); }
+    .academy-hero::after { top: auto; right: -46%; bottom: -4%; width: 118%; height: 50%; opacity: .42; }
+    .academy-head h1 { font-size: clamp(54px,14vw,66px); }
+    .academy-lead { align-items: flex-start; flex-direction: column; margin-top: 44px; }
+    .academy-lead .button { width: 100%; }
+    .curriculum-section header { grid-template-columns: 1fr; gap: 24px; }
+    .curriculum-list li { grid-template-columns: 48px 1fr; gap: 18px; }
+    .curriculum-list li > p { grid-column: 2; }
+    .output-system article { grid-template-columns: 52px 1fr auto; }
+  }
+</style>

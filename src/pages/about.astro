@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="SeasideBeerについて｜松山からAIを仕事と地域の力へ"
+  description="SeasideBeerの思想、目指す地域の姿、現在地、代表・貝崎泰我のプロフィールを紹介します。"
+  image="/og.png"
+>
+  <section class="page-hero about-hero">
+    <div class="container-wide about-head">
+      <p class="eyebrow">ABOUT SEASIDEBEER</p>
+      <h1>人間の時間を、<br /><em>地域に返す。</em></h1>
+      <div class="about-lead">
+        <p>企業の仕事を軽くする。若者が作品を持つ。その二つを松山でつなぎ、次の仕事が生まれるところまで動かす。それがSeasideBeerの役目です。</p>
+        <span>AI IMPLEMENTATION<br />TALENT DEVELOPMENT<br />REGIONAL ECOSYSTEM</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy-section">
+    <div class="container-wide philosophy-grid">
+      <p class="section-index" data-reveal>PHILOSOPHY</p>
+      <div data-reveal>
+        <h2>{site.tagline}</h2>
+        <p>
+          「海辺でビールでも」は、働かないための言い訳ではありません。繰り返す作業をAIへ任せ、顧客と話す。若者を育てる。新しい商売を考える。松山の企業と人が、そうした時間を取り戻せるようにする。この少しふざけた言葉を、本気で事業にします。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="vision-section">
+    <div class="container-wide">
+      <header data-reveal><p class="section-index">LONG-TERM VISION</p><h2>松山で、若者と新しい仕事が<br /><em>出会う回数</em>を増やす。</h2></header>
+      <div class="vision-list">
+        <article data-reveal><span>01</span><h3>会社の仕事を軽くする</h3><p>実際の業務で成果物をつくり、次も使える手順を残します。</p></article>
+        <article data-reveal><span>02</span><h3>若者が作品を持つ</h3><p>HP、資料、小さなアプリ。企業へ見せ、自分で説明できるものをつくります。</p></article>
+        <article data-reveal><span>03</span><h3>次の仕事につなぐ</h3><p>企業の課題を講座へ持ち込み、完成した作品を次の相談へつなげます。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="founder-section">
+    <div class="container-wide founder-grid">
+      <div class="founder-type" data-reveal aria-label="代表 貝崎泰我">
+        <span>FOUNDER / REPRESENTATIVE</span>
+        <strong>TAIGA<br />KAIZAKI</strong>
+        <i>松山 / EHIME</i>
+      </div>
+      <div class="founder-copy" data-reveal>
+        <p class="section-index">PROFILE</p>
+        <h2>{site.representative}</h2>
+        <p>
+          愛媛県松山市を拠点に、企業のAI導入と研修、若者向けの制作教育を準備しています。現在は、松山大学関係者への生成AI活用支援と、管理職向け書籍の制作を進めています。ツールの説明だけで終えず、資料、Web、調査、日々の手順まで実際に作ることを重視しています。
+        </p>
+        <dl>
+          <div><dt>CURRENT WORK</dt><dd>松山大学関係者への生成AI活用支援</dd></div>
+          <div><dt>WRITING</dt><dd>管理職向け生成AI書籍を制作中</dd></div>
+          <div><dt>PRIORITY</dt><dd>企業向けAI研修・AI導入支援</dd></div>
+        </dl>
+        <small>所属先や件数など、確認できない情報は掲載していません。公開許可を得た実績から順次追加します。</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="status-section">
+    <div class="container-wide status-grid">
+      <header data-reveal><p class="section-index">WHERE WE ARE</p><h2>いまは、<br /><em>法人化前</em>です。</h2></header>
+      <div class="status-copy" data-reveal>
+        <p>だから、組織や実績を大きく見せません。進めている仕事、確認できた成果、次にやることを、そのまま公開します。</p>
+        <ol>
+          <li><span>NOW</span>企業向け支援の商品化と初期実績づくり</li>
+          <li><span>NEXT</span>4回の実践講座と最初の10人</li>
+          <li><span>THEN</span>企業・大学・行政との継続的な地域連携</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-compact">
+    <div class="container-wide cta-panel" data-reveal>
+      <p class="eyebrow">WORK WITH US</p>
+      <h2>仕事の相談から、一緒に始めたい。</h2>
+      <p>企業研修、業務改善、若者向け講座、大学・行政との企画。まだ形が決まっていなくても、いま困っていることから話せます。</p>
+      <a class="button button-primary" href="/contact/">SeasideBeerへ相談する <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero::before { top: -12%; right: -4%; width: min(62vw,880px); aspect-ratio: 1.55; border-radius: 54% 0 0 48% / 62% 0 0 52%; background: linear-gradient(90deg, rgba(209,245,255,.2), rgba(4,71,142,.08)), url('/images/setouchi-aerial.webp') center / cover; box-shadow: inset 0 0 0 1px rgba(255,255,255,.5), 0 28px 90px rgba(4,71,142,.12); opacity: .5; }
+  .about-hero::after { position: absolute; z-index: 0; inset: 0; background: linear-gradient(90deg, rgba(215,246,255,.97) 0%, rgba(215,246,255,.88) 46%, rgba(215,246,255,.18) 76%); content: ""; pointer-events: none; }
+  .about-head { position: relative; z-index: 1; }
+  .about-head h1 { margin: 0; }
+  .about-head h1 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .about-lead { display: flex; gap: 80px; align-items: flex-end; justify-content: space-between; margin: 58px 0 0 25%; }
+  .about-lead p { max-width: 600px; margin: 0; color: var(--ink-700); line-height: 2; }
+  .about-lead span { flex: 0 0 auto; color: var(--sea-700); font-size: 8px; letter-spacing: .14em; line-height: 2; }
+  .philosophy-section { padding: clamp(110px,15vw,220px) 0; background: var(--bone); }
+  .philosophy-grid { display: grid; grid-template-columns: .3fr 1fr; gap: 80px; }
+  .philosophy-grid h2 { max-width: 950px; margin: 0; font-family: "Noto Serif JP", serif; font-size: clamp(48px,7vw,94px); font-weight: 500; letter-spacing: -.07em; line-height: 1.28; }
+  .philosophy-grid div > p { max-width: 650px; margin: 56px 0 0 auto; color: var(--ink-600); line-height: 2.1; }
+  .vision-section { padding: clamp(110px,14vw,200px) 0; background: var(--paper); }
+  .vision-section header { margin-bottom: 80px; }
+  .vision-section h2 { max-width: 1120px; margin: 0; font-size: clamp(52px,8vw,112px); font-weight: 500; letter-spacing: -.09em; line-height: 1; }
+  .vision-section h2 em { color: var(--blue); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .vision-list { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .vision-list article { min-height: 330px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .vision-list span { color: var(--blue); font-size: 9px; }
+  .vision-list h3 { margin: 130px 0 14px; font-size: 24px; font-weight: 500; letter-spacing: -.04em; }
+  .vision-list p { margin: 0; color: var(--ink-600); font-size: 12px; }
+  .founder-section { padding: clamp(110px,14vw,200px) 0; color: white; background: var(--ink); }
+  .founder-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(60px,10vw,150px); align-items: center; }
+  .founder-type { position: relative; min-height: 640px; padding: 28px; overflow: hidden; background: var(--blue); }
+  .founder-type::before { position: absolute; right: -34%; bottom: -16%; width: 95%; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; box-shadow: 0 0 0 65px rgba(255,255,255,.04),0 0 0 130px rgba(255,255,255,.03); content: ""; }
+  .founder-type span { color: var(--tide); font-size: 8px; letter-spacing: .16em; }
+  .founder-type strong { position: absolute; bottom: 72px; left: 24px; font-size: clamp(58px,7vw,100px); font-weight: 500; letter-spacing: -.09em; line-height: .78; }
+  .founder-type i { position: absolute; bottom: 26px; left: 28px; color: rgba(255,255,255,.46); font-size: 8px; font-style: normal; letter-spacing: .15em; }
+  .founder-copy .section-index { color: var(--tide); }
+  .founder-copy h2 { margin: 0 0 34px; font-size: clamp(52px,7vw,96px); font-weight: 500; letter-spacing: -.08em; }
+  .founder-copy > p { color: rgba(255,255,255,.58); line-height: 2; }
+  .founder-copy dl { margin: 40px 0 24px; border-top: 1px solid var(--line-invert); }
+  .founder-copy dl div { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line-invert); }
+  .founder-copy dt { color: var(--tide); font-size: 8px; letter-spacing: .13em; }
+  .founder-copy dd { margin: 0; font-size: 12px; }
+  .founder-copy small { color: rgba(255,255,255,.36); font-size: 9px; line-height: 1.8; }
+  .status-section { padding: clamp(100px,13vw,180px) 0; background: var(--tide); }
+  .status-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(60px,10vw,150px); }
+  .status-section h2 { margin: 0; font-size: clamp(52px,7vw,96px); font-weight: 500; letter-spacing: -.08em; line-height: 1; }
+  .status-section h2 em { color: var(--blue); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .status-copy > p { margin: 0 0 38px; line-height: 2; }
+  .status-copy ol { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+  .status-copy li { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .status-copy span { display: inline-block; width: 80px; color: var(--blue); font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+  @media (max-width: 900px) {
+    .about-lead { margin-left: 0; }
+    .philosophy-grid,
+    .founder-grid,
+    .status-grid { grid-template-columns: 1fr; }
+    .vision-list { grid-template-columns: 1fr; }
+    .vision-list article { min-height: 240px; }
+    .vision-list h3 { margin-top: 74px; }
+  }
+  @media (max-width: 680px) {
+    .about-lead { align-items: flex-start; flex-direction: column; gap: 30px; }
+    .philosophy-grid { gap: 30px; }
+    .founder-type { min-height: 500px; }
+    .founder-copy dl div { grid-template-columns: 1fr; gap: 5px; }
+  }
+</style>
