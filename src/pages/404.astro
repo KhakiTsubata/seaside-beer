@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="ページが見つかりません｜SeasideBeer" description="指定されたページが見つかりませんでした。" noindex={true}>
+  <section class="not-found">
+    <div class="container not-found-inner">
+      <p class="not-found-code">404</p>
+      <p class="eyebrow">PAGE NOT FOUND</p>
+      <h1>ページが見つかりません。</h1>
+      <p>URLが変わったか、ページが削除された可能性があります。</p>
+      <a class="button button-dark" href="/">トップへ戻る</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    display: grid;
+    min-height: 68vh;
+    place-items: center;
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--sea-50), white);
+    text-align: center;
+  }
+
+  .not-found-code {
+    margin-bottom: 10px;
+    color: var(--sea-200);
+    font-size: clamp(96px, 20vw, 210px);
+    font-weight: 950;
+    letter-spacing: -0.1em;
+    line-height: 0.8;
+  }
+
+  .not-found .eyebrow::after {
+    width: 26px;
+    height: 1px;
+    margin-left: 10px;
+    background: currentColor;
+    content: "";
+  }
+
+  .not-found h1 {
+    margin-bottom: 14px;
+    font-size: clamp(34px, 6vw, 56px);
+    letter-spacing: -0.055em;
+  }
+
+  .not-found p:not(.eyebrow, .not-found-code) {
+    margin-bottom: 30px;
+    color: var(--ink-600);
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import logo from '../assets/brand/logo-icon.png';
+import { Image } from 'astro:assets';
+import { primaryNav, site } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-sky" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="container-wide footer-grid">
+    <div class="footer-brand-block">
+      <a class="brand brand-footer" href="/">
+        <Image src={logo} width={48} height={48} alt="" />
+        <span>SeasideBeer</span>
+      </a>
+      <p>{site.tagline}</p>
+      <small>{site.location}から、AIを仕事と地域の力へ。</small>
+    </div>
+    <div class="footer-column">
+      <h2>Explore</h2>
+      {primaryNav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </div>
+    <div class="footer-column">
+      <h2>Contact</h2>
+      <a href="/contact/">お問い合わせ</a>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </div>
+    <div class="footer-column">
+      <h2>Legal</h2>
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/legal/">特定商取引法に基づく表記</a>
+    </div>
+  </div>
+  <div class="container-wide footer-bottom">
+    <span>© {year} SeasideBeer</span>
+    <span>MATSUYAMA, EHIME</span>
+  </div>
+</footer>

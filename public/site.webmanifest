@@ -1,0 +1,17 @@
+{
+  "name": "SeasideBeer",
+  "short_name": "SeasideBeer",
+  "description": "松山のAI研修・AI導入支援・AI人材育成",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#06364b",
+  "icons": [
+    {
+      "src": "/logo-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

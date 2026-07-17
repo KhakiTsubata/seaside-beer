@@ -1,0 +1,75 @@
+---
+import logo from '../assets/brand/logo-icon.png';
+import { Image } from 'astro:assets';
+import { primaryNav } from '../data/site';
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<header class="site-header" data-header>
+  <div class="header-inner container-wide">
+    <a class="brand" href="/" aria-label="SeasideBeer トップページ">
+      <Image src={logo} width={44} height={44} alt="" loading="eager" />
+      <span>SeasideBeer</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+      aria-label="メニューを開く"
+      data-nav-toggle
+    >
+      <span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-navigation" aria-label="メインメニュー" data-nav>
+      <div class="nav-links">
+        {primaryNav.map((item) => (
+          <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>
+            {item.label}
+          </a>
+        ))}
+      </div>
+      <a class="button button-small button-primary nav-contact" href="/contact/">
+        相談する
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('[data-header]');
+  const toggle = document.querySelector('[data-nav-toggle]');
+  const nav = document.querySelector('[data-nav]');
+
+  const closeMenu = () => {
+    if (!(toggle instanceof HTMLButtonElement) || !(nav instanceof HTMLElement)) return;
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'メニューを開く');
+    nav.classList.remove('is-open');
+    document.body.removeAttribute('data-menu-open');
+  };
+
+  if (header && toggle instanceof HTMLButtonElement && nav instanceof HTMLElement) {
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+      nav.classList.toggle('is-open', open);
+      document.body.toggleAttribute('data-menu-open', open);
+    });
+
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860) closeMenu();
+    });
+  }
+</script>

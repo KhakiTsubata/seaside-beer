@@ -1,0 +1,299 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="SeasideBeerについて｜松山からAIを仕事と地域の力へ"
+  description="SeasideBeerが目指すこと、現在地、代表・貝崎泰我のプロフィール、公開情報の考え方を紹介します。"
+  image="/og.png"
+>
+  <section class="page-hero about-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">ABOUT SEASIDEBEER</p>
+      <h1>AIで時間を取り戻し、<br />地域で使う。</h1>
+      <p class="lead">
+        SeasideBeerは、松山発のAI教育・AI導入支援プロジェクトです。
+        企業の仕事を変えることと、若者が仕事につながる力を持つことを、同じ地域の中で進めます。
+      </p>
+    </div>
+  </section>
+
+  <section class="section philosophy-section">
+    <div class="container split">
+      <div class="philosophy-mark" aria-hidden="true"><span>AI</span><i>+</i><span>SEA</span></div>
+      <div class="prose-block">
+        <p class="eyebrow">PHILOSOPHY</p>
+        <h2>{site.tagline}</h2>
+        <p>
+          これは、AIが全部やってくれるという意味ではありません。
+          繰り返す作業や下準備をAIへ移し、人が地域、創造、関係づくり、事業づくりへ時間を使える状態を表しています。
+        </p>
+        <p>便利なツールを紹介するだけでなく、仕事の任せ方と、人が判断する場所まで一緒に設計します。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cloud vision-section">
+    <div class="container-wide">
+      <SectionHeading
+        eyebrow="LONG-TERM VISION"
+        title="松山を、若者と新しい仕事が集まる街へ。"
+        lead="四国の若者、起業家、AI人材、若い会社が松山で出会い、仕事をつくれる状態へ近づけます。長期の構想は大きく持ち、最初の証拠は小さく具体的につくります。"
+      />
+      <div class="vision-grid">
+        <article><span>01</span><h2>企業の仕事を変える</h2><p>AI研修と導入支援で、地域企業の中に実際に使える成果物と手順を残す。</p></article>
+        <article><span>02</span><h2>若者が作品を持つ</h2><p>学んだという言葉ではなく、企業へ見せ、説明し、次の仕事へつながる完成物を残す。</p></article>
+        <article><span>03</span><h2>地域で循環させる</h2><p>企業の課題を学びの題材へ、若者の成果を企業の次の相談へ変えていく。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section founder-profile">
+    <div class="container split founder-grid">
+      <div class="profile-panel">
+        <p class="profile-kicker">REPRESENTATIVE</p>
+        <h2>{site.representative}</h2>
+        <p class="profile-role">SeasideBeer 代表 / 松山</p>
+        <div class="profile-initial" aria-hidden="true">TK</div>
+      </div>
+      <div class="prose-block">
+        <p class="eyebrow">PROFILE</p>
+        <h2>構想を、実際に使える形へ。</h2>
+        <p>
+          愛媛・松山を拠点に、AI教育、AI導入支援、若者のAI人材育成、地域企業支援を進めています。
+          AIを回答者として使うだけでなく、調査、文章、資料、Web、仕組みづくりを移管する相手として扱っています。
+        </p>
+        <ul class="profile-facts">
+          <li><span>現在の支援</span><strong>大学教員への生成AI活用支援</strong></li>
+          <li><span>現在の制作</span><strong>管理職向け生成AI書籍を執筆中</strong></li>
+          <li><span>現在の重点</span><strong>企業向けAI研修・導入支援</strong></li>
+        </ul>
+        <p class="profile-note">大学名、支援回数、契約内容などは、公開許可が確認できるまで掲載しません。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-sea now-section">
+    <div class="container-wide">
+      <SectionHeading
+        eyebrow="WHERE WE ARE"
+        title="現在は、法人化前の準備段階です。"
+        lead="事業の規模や実績を大きく見せません。現在進めていること、確認が必要なこと、次に残す成果を分けて公開します。"
+        invert={true}
+      />
+      <div class="now-grid">
+        <article><span>進行中</span><h2>企業向け支援の営業商品化</h2><p>研修、体験会、月次支援の内容と、企業へ見せる成果物基準を整えています。</p></article>
+        <article><span>進行中</span><h2>若者向け4回講座の設計</h2><p>制作、修正、説明、発表まで含む講座を、大学・企業・スポンサーと接続できる形へ整えています。</p></article>
+        <article><span>要確認</span><h2>公開できる実績情報</h2><p>固有名詞、件数、写真、推薦文は、本人・関係者の許可が確認できたものから追加します。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-compact">
+    <div class="container-wide cta-panel">
+      <p class="eyebrow">WORK WITH US</p>
+      <h2>企業、大学、行政、地域の方からの相談を受け付けています。</h2>
+      <p>AI研修、業務改善、人材育成、成果発表、スポンサー連携について、決まっている範囲からお聞かせください。</p>
+      <a class="button button-dark" href="/contact/">SeasideBeerへ相談する <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    background:
+      radial-gradient(circle at 88% 18%, rgba(56, 199, 227, 0.24), transparent 26%),
+      linear-gradient(135deg, var(--sand), white 56%, var(--sea-50));
+  }
+
+  .philosophy-mark {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    border-radius: 50% 50% 18% 50%;
+    color: white;
+    background: linear-gradient(145deg, var(--ink-950), var(--sea-600));
+    box-shadow: var(--shadow-lg);
+  }
+
+  .philosophy-mark span {
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: 900;
+    letter-spacing: -0.07em;
+  }
+
+  .philosophy-mark i {
+    color: var(--sun-400);
+    font-size: 24px;
+    font-style: normal;
+  }
+
+  .vision-grid,
+  .now-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .vision-grid article {
+    min-height: 330px;
+    padding: 34px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: white;
+  }
+
+  .vision-grid span,
+  .now-grid span {
+    color: var(--sea-700);
+    font-size: 10px;
+    font-weight: 850;
+  }
+
+  .vision-grid h2 {
+    margin: 78px 0 14px;
+    font-size: 23px;
+    letter-spacing: -0.04em;
+  }
+
+  .vision-grid p {
+    color: var(--ink-600);
+    font-size: 13px;
+  }
+
+  .profile-panel {
+    position: relative;
+    min-height: 520px;
+    padding: 42px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    color: white;
+    background: linear-gradient(155deg, var(--sea-600), var(--ink-950));
+    box-shadow: var(--shadow-lg);
+  }
+
+  .profile-kicker {
+    color: var(--sea-200);
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.18em;
+  }
+
+  .profile-panel h2 {
+    margin-top: 180px;
+    margin-bottom: 8px;
+    font-size: clamp(42px, 7vw, 68px);
+    letter-spacing: -0.07em;
+  }
+
+  .profile-role {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 13px;
+  }
+
+  .profile-initial {
+    position: absolute;
+    top: -70px;
+    right: -30px;
+    color: rgba(255, 255, 255, 0.06);
+    font-size: 240px;
+    font-weight: 950;
+    letter-spacing: -0.12em;
+    line-height: 1;
+  }
+
+  .profile-facts {
+    display: grid;
+    margin: 34px 0 22px;
+    padding: 0;
+    border-top: 1px solid var(--line);
+    list-style: none;
+  }
+
+  .profile-facts li {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+  }
+
+  .profile-facts span {
+    color: var(--ink-500);
+  }
+
+  .profile-note {
+    color: var(--ink-500) !important;
+    font-size: 11px;
+  }
+
+  .now-grid article {
+    min-height: 260px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .now-grid span {
+    display: inline-flex;
+    padding: 5px 9px;
+    border-radius: 999px;
+    color: var(--ink-950);
+    background: var(--sun-400);
+  }
+
+  .now-grid h2 {
+    margin: 54px 0 12px;
+    color: white;
+    font-size: 20px;
+  }
+
+  .now-grid p {
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 12px;
+  }
+
+  @media (max-width: 880px) {
+    .vision-grid,
+    .now-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .vision-grid article,
+    .now-grid article {
+      min-height: auto;
+    }
+
+    .vision-grid h2,
+    .now-grid h2 {
+      margin-top: 34px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .philosophy-mark {
+      min-height: 320px;
+    }
+
+    .profile-panel {
+      min-height: 420px;
+      padding: 30px 24px;
+    }
+
+    .profile-panel h2 {
+      margin-top: 160px;
+    }
+
+    .profile-facts li {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
+</style>

@@ -1,0 +1,109 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  article?: boolean;
+  publishedAt?: Date;
+}
+
+const {
+  title = site.title,
+  description = site.description,
+  image,
+  noindex = false,
+  article = false,
+  publishedAt,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const socialImage = image ? new URL(image, Astro.site ?? Astro.url.origin) : undefined;
+const organizationId = new URL('/#organization', Astro.site ?? Astro.url.origin).toString();
+const organizationData = {
+  '@type': 'Organization',
+  '@id': organizationId,
+  name: site.name,
+  url: new URL('/', Astro.site ?? Astro.url.origin).toString(),
+  logo: new URL('/logo-icon.png', Astro.site ?? Astro.url.origin).toString(),
+  email: site.email,
+  founder: {
+    '@type': 'Person',
+    name: site.representative,
+  },
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: '愛媛県松山市',
+  },
+  description: site.description,
+};
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    organizationData,
+    ...(article && publishedAt
+      ? [{
+          '@type': 'Article',
+          headline: title,
+          description,
+          datePublished: publishedAt.toISOString(),
+          mainEntityOfPage: canonical.toString(),
+          author: { '@type': 'Person', name: site.representative },
+          publisher: { '@id': organizationId },
+          ...(socialImage ? { image: socialImage.toString() } : {}),
+        }]
+      : []),
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#06364b" />
+    <meta name="color-scheme" content="light" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/logo-icon.png" />
+    <link rel="apple-touch-icon" href="/logo-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {socialImage && (
+      <>
+        <meta property="og:image" content={socialImage} />
+        <meta property="og:image:width" content="1728" />
+        <meta property="og:image:height" content="910" />
+        <meta property="og:image:alt" content="SeasideBeer｜AIを、現場で使える力に。" />
+      </>
+    )}
+    {article && publishedAt && <meta property="article:published_time" content={publishedAt.toISOString()} />}
+    <meta name="twitter:card" content={socialImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
+    {socialImage && <meta name="twitter:image:alt" content="SeasideBeer｜AIを、現場で使える力に。" />}
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

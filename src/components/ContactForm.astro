@@ -1,0 +1,79 @@
+<form class="contact-form" id="contact-form" action="/api/contact" method="POST">
+  <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" hidden />
+
+  <div class="form-grid">
+    <div class="field">
+      <label for="company">会社・団体名 <span>任意</span></label>
+      <input id="company" name="company" type="text" autocomplete="organization" />
+    </div>
+    <div class="field">
+      <label for="name">お名前</label>
+      <input id="name" name="name" type="text" autocomplete="name" required />
+    </div>
+    <div class="field field-full">
+      <label for="email">メールアドレス</label>
+      <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+    </div>
+    <div class="field field-full">
+      <label for="topic">ご相談の内容</label>
+      <select id="topic" name="topic" required>
+        <option value="">選択してください</option>
+        <option>企業向けAI研修</option>
+        <option>AI導入・業務改善支援</option>
+        <option>学生・若者向け講座</option>
+        <option>大学・行政・地域連携</option>
+        <option>取材・登壇・その他</option>
+      </select>
+    </div>
+    <div class="field field-full">
+      <label for="message">状況や相談したいこと</label>
+      <textarea id="message" name="message" rows="7" required placeholder="対象となる仕事、人数、困っていることなど、決まっている範囲でお書きください。"></textarea>
+    </div>
+  </div>
+
+  <label class="consent" for="consent">
+    <input id="consent" name="privacy_consent" type="checkbox" required />
+    <span><a href="/privacy/" target="_blank">プライバシーポリシー</a>に同意して送信します。</span>
+  </label>
+
+  <button class="button button-primary form-submit" type="submit">
+    <span>相談内容を送る</span><span aria-hidden="true">→</span>
+  </button>
+  <p class="form-note">営業日程を確認のうえ、メールでご連絡します。</p>
+  <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+</form>
+
+<script>
+  const form = document.querySelector('#contact-form');
+  const status = document.querySelector('[data-form-status]');
+
+  if (form instanceof HTMLFormElement && status instanceof HTMLElement) {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const submit = form.querySelector('button[type="submit"]');
+      if (!(submit instanceof HTMLButtonElement)) return;
+
+      submit.disabled = true;
+      status.textContent = '送信しています。';
+      status.className = 'form-status';
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error('submission failed');
+        form.reset();
+        status.textContent = '送信しました。内容を確認してご連絡します。';
+        status.className = 'form-status is-success';
+      } catch {
+        status.innerHTML = '送信できませんでした。<a href="mailto:seasidebeer.setouchi@gmail.com">メールで直接ご連絡ください。</a>';
+        status.className = 'form-status is-error';
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  }
+</script>

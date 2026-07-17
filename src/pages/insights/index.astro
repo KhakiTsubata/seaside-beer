@@ -1,0 +1,177 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const entries = (await getCollection('insights', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
+---
+
+<BaseLayout
+  title="記事・活動｜SeasideBeer"
+  description="企業のAI導入、AI研修、人材育成、仕事とAIについて、SeasideBeerが現場で必要になる判断を記録します。"
+  image="/og.png"
+>
+  <section class="page-hero insights-hero">
+    <div class="container page-hero-inner">
+      <p class="eyebrow">INSIGHTS & NOTES</p>
+      <h1>AIを仕事に移すための、<br />判断と記録。</h1>
+      <p class="lead">ツールのニュースを追うだけではなく、企業導入、研修設計、人材育成で実際に決めることを書きます。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-wide">
+      <div class="article-list">
+        {entries.map((entry, index) => (
+          <article class:list={['article-card', { first: index === 0 }]}>
+            <a href={`/insights/${entry.id}/`}>
+              <div class="article-meta">
+                <span>{entry.data.category}</span>
+                <time datetime={entry.data.publishedAt.toISOString()}>{dateFormatter.format(entry.data.publishedAt)}</time>
+              </div>
+              <h2>{entry.data.title}</h2>
+              <p>{entry.data.description}</p>
+              <div class="article-footer">
+                <small>読者：{entry.data.audience}</small>
+                <span aria-hidden="true">↗</span>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-compact section-cloud">
+    <div class="container-wide cta-panel">
+      <p class="eyebrow">SHARE A QUESTION</p>
+      <h2>記事にしてほしい疑問や、現場の悩みも募集しています。</h2>
+      <p>公開できる形に整え、同じ悩みを持つ地域企業や教育関係者へ共有します。個別の会社名や機密情報は公開しません。</p>
+      <a class="button button-dark" href="/contact/">テーマを送る <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .insights-hero {
+    background:
+      radial-gradient(circle at 88% 24%, rgba(168, 232, 243, 0.4), transparent 27%),
+      linear-gradient(135deg, white, var(--sea-50));
+  }
+
+  .article-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .article-card a {
+    display: flex;
+    min-height: 430px;
+    flex-direction: column;
+    padding: clamp(28px, 5vw, 48px);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: white;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .article-card a:hover {
+    border-color: var(--sea-200);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-5px);
+  }
+
+  .article-card.first a {
+    color: white;
+    background: var(--ink-950);
+  }
+
+  .article-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    color: var(--ink-500);
+    font-size: 10px;
+    font-weight: 800;
+  }
+
+  .article-meta span {
+    color: var(--sea-700);
+  }
+
+  .first .article-meta {
+    color: rgba(255, 255, 255, 0.48);
+  }
+
+  .first .article-meta span {
+    color: var(--sun-400);
+  }
+
+  .article-card h2 {
+    margin-bottom: 18px;
+    font-size: clamp(25px, 3vw, 36px);
+    letter-spacing: -0.05em;
+    line-height: 1.45;
+  }
+
+  .article-card p {
+    color: var(--ink-600);
+    font-size: 14px;
+  }
+
+  .first p {
+    color: rgba(255, 255, 255, 0.66);
+  }
+
+  .article-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .article-footer small {
+    max-width: 70%;
+    color: var(--ink-500);
+    font-size: 10px;
+  }
+
+  .first .article-footer small {
+    color: rgba(255, 255, 255, 0.46);
+  }
+
+  .article-footer span {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 50%;
+    color: white;
+    background: var(--ink-950);
+  }
+
+  .first .article-footer span {
+    color: var(--ink-950);
+    background: var(--sun-400);
+  }
+
+  @media (max-width: 760px) {
+    .article-list {
+      grid-template-columns: 1fr;
+    }
+
+    .article-card a {
+      min-height: 360px;
+    }
+
+    .article-meta {
+      margin-bottom: 48px;
+    }
+  }
+</style>
