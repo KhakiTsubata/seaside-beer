@@ -4,12 +4,12 @@
   "description": "松山のAI導入支援・AI研修・AI人材育成",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#07131f",
-  "theme_color": "#07131f",
+  "background_color": "#dff8ff",
+  "theme_color": "#dff8ff",
   "icons": [
     {
       "src": "/logo-icon.png",
-      "sizes": "512x512",
+      "sizes": "229x229",
       "type": "image/png",
       "purpose": "any maskable"
     }

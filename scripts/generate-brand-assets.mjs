@@ -4,49 +4,45 @@ import { fileURLToPath } from 'node:url';
 const og = `
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <radialGradient id="orb" cx="36%" cy="33%" r="70%">
-      <stop offset="0" stop-color="#ff9a69"/>
-      <stop offset="0.24" stop-color="#ff6b3d"/>
-      <stop offset="0.62" stop-color="#2057f5"/>
-      <stop offset="1" stop-color="#07131f" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" stroke-opacity="0.055" stroke-width="1"/>
-    </pattern>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eafcff"/>
+      <stop offset="0.52" stop-color="#c8f2ff"/>
+      <stop offset="1" stop-color="#80d9f3"/>
+    </linearGradient>
+    <linearGradient id="coast" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#45c4e9"/>
+      <stop offset="1" stop-color="#087dc0"/>
+    </linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
   </defs>
-  <rect width="1200" height="630" fill="#07131f"/>
-  <rect width="1200" height="630" fill="url(#grid)"/>
-  <circle cx="934" cy="286" r="310" fill="url(#orb)"/>
-  <circle cx="934" cy="286" r="205" fill="none" stroke="#ffffff" stroke-opacity="0.25"/>
-  <circle cx="934" cy="286" r="260" fill="none" stroke="#ffffff" stroke-opacity="0.1"/>
-  <g fill="none" stroke="#66e7d7" stroke-opacity="0.25">
-    <path d="M 0 430 C 260 360 410 505 700 420 S 1010 315 1200 410"/>
-    <path d="M 0 452 C 260 382 410 527 700 442 S 1010 337 1200 432"/>
-    <path d="M 0 474 C 260 404 410 549 700 464 S 1010 359 1200 454"/>
-    <path d="M 0 496 C 260 426 410 571 700 486 S 1010 381 1200 476"/>
+  <rect width="1200" height="630" fill="url(#water)"/>
+  <ellipse cx="1000" cy="38" rx="420" ry="230" fill="#ffffff" fill-opacity=".58" transform="rotate(-8 1000 38)"/>
+  <ellipse cx="1120" cy="560" rx="530" ry="215" fill="url(#coast)" transform="rotate(-7 1120 560)"/>
+  <ellipse cx="910" cy="492" rx="380" ry="140" fill="#ffffff" fill-opacity=".52" transform="rotate(6 910 492)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity=".48" stroke-width="3" filter="url(#soft)">
+    <path d="M 520 55 C 710 10 860 160 1080 66 S 1210 10 1270 50"/>
+    <path d="M 480 118 C 690 54 850 224 1090 128 S 1210 60 1280 112"/>
+    <path d="M 620 205 C 760 145 950 270 1210 190"/>
   </g>
-  <g font-family="Arial, Helvetica, sans-serif" fill="#ffffff">
-    <text x="62" y="78" font-size="16" font-weight="700" letter-spacing="3">SEASIDE / BEER</text>
-    <text x="62" y="224" font-size="74" font-weight="500" letter-spacing="-5">MAKE WORK</text>
-    <text x="62" y="306" font-size="74" font-weight="500" letter-spacing="-5" fill="#66e7d7">MOVE.</text>
-    <text x="62" y="558" font-size="12" font-weight="700" letter-spacing="2.6" fill="#ffffff" fill-opacity="0.55">AI IMPLEMENTATION / TALENT DEVELOPMENT</text>
-    <text x="1016" y="558" font-size="11" font-weight="700" letter-spacing="2" text-anchor="end" fill="#66e7d7">MATSUYAMA</text>
+  <g fill="none" stroke="#ffffff" stroke-opacity=".5" stroke-width="2">
+    <path d="M 520 436 C 730 360 900 514 1230 402"/>
+    <path d="M 480 472 C 725 396 910 552 1240 438"/>
+    <path d="M 490 520 C 730 454 930 598 1250 486"/>
   </g>
-</svg>`;
-
-const icon = `
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="92" fill="#07131f"/>
-  <circle cx="256" cy="256" r="166" fill="none" stroke="#66e7d7" stroke-width="12"/>
-  <g fill="none" stroke="#66e7d7" stroke-width="12" stroke-linecap="round">
-    <path d="M 132 212 C 195 176 251 248 380 196"/>
-    <path d="M 132 260 C 210 219 278 299 380 244"/>
-    <path d="M 132 308 C 211 268 283 341 380 292"/>
+  <g fill="#064a93">
+    <text x="155" y="88" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" letter-spacing="-1">SeasideBeer</text>
+    <text x="66" y="274" font-family="'Yu Mincho', 'Noto Serif JP', serif" font-size="83" letter-spacing="5">AIと、</text>
+    <text x="66" y="384" font-family="'Yu Mincho', 'Noto Serif JP', serif" font-size="83" letter-spacing="5">地域のあいだに。</text>
+    <text x="70" y="536" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="3">AI IMPLEMENTATION / TALENT DEVELOPMENT</text>
+    <text x="70" y="570" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="4" fill="#168ec5">MATSUYAMA / EHIME</text>
   </g>
 </svg>`;
 
 const ogPath = fileURLToPath(new URL('../public/og.png', import.meta.url));
 const iconPath = fileURLToPath(new URL('../public/logo-icon.png', import.meta.url));
 
-await sharp(Buffer.from(og)).png({ quality: 94 }).toFile(ogPath);
-await sharp(Buffer.from(icon)).png({ quality: 96 }).toFile(iconPath);
+const logo = await sharp(iconPath).resize(72, 72).png().toBuffer();
+await sharp(Buffer.from(og))
+  .composite([{ input: logo, left: 66, top: 34 }])
+  .png({ quality: 94 })
+  .toFile(ogPath);

@@ -66,8 +66,8 @@ const structuredData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#07131f" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#dff8ff" />
+    <meta name="color-scheme" content="light" />
     <script is:inline>document.documentElement.classList.add('js');</script>
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -91,7 +91,7 @@ const structuredData = {
         <meta property="og:image" content={socialImage} />
         <meta property="og:image:width" content="1728" />
         <meta property="og:image:height" content="910" />
-        <meta property="og:image:alt" content="SeasideBeer｜仕事を、AIに渡す。" />
+        <meta property="og:image:alt" content="SeasideBeer｜AIと、地域のあいだに。" />
       </>
     )}
     {article && publishedAt && <meta property="article:published_time" content={publishedAt.toISOString()} />}
@@ -99,7 +99,7 @@ const structuredData = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     {socialImage && <meta name="twitter:image" content={socialImage} />}
-    {socialImage && <meta name="twitter:image:alt" content="SeasideBeer｜仕事を、AIに渡す。" />}
+    {socialImage && <meta name="twitter:image:alt" content="SeasideBeer｜AIと、地域のあいだに。" />}
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body class:list={{ 'home-page': isHome }}>
