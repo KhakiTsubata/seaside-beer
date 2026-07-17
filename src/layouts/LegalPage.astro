@@ -29,7 +29,7 @@ const { title, description, updated, noindex = false } = Astro.props;
 
 <style>
   .legal-hero {
-    padding: 80px 0 70px;
+    padding: calc(var(--header-height) + 80px) 0 70px;
     background: linear-gradient(135deg, var(--sea-50), white 72%);
   }
 
@@ -122,7 +122,7 @@ const { title, description, updated, noindex = false } = Astro.props;
 
   @media (max-width: 680px) {
     .legal-hero {
-      padding: 58px 0 52px;
+      padding: calc(var(--header-height) + 58px) 0 52px;
     }
 
     .legal-section {

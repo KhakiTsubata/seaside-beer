@@ -10,166 +10,72 @@ import { site } from '../data/site';
   image="/og.png"
 >
   <section class="page-hero contact-hero">
-    <div class="container page-hero-inner">
-      <p class="eyebrow">CONTACT</p>
-      <h1>決まっていなくても、<br />話しながら整理します。</h1>
-      <p class="lead">
-        「何にAIを使えるか分からない」「研修と制作のどちらが先か迷っている」という段階でも構いません。
-        対象となる仕事と今の状態から整理します。
-      </p>
+    <div class="container-wide contact-head">
+      <p class="eyebrow">START A CONVERSATION</p>
+      <h1>決まっていなくても、<br /><em>話しながら整える。</em></h1>
+      <p class="lead">「何にAIを使えるか分からない」という段階でも構いません。対象となる仕事と今の状態から整理します。</p>
     </div>
   </section>
 
-  <section class="section contact-section">
+  <section class="contact-section">
     <div class="container-wide contact-grid">
-      <aside class="contact-aside">
-        <p class="eyebrow">BEFORE YOU SEND</p>
+      <aside class="contact-aside" data-reveal>
+        <p class="section-index">BEFORE YOU SEND</p>
         <h2>相談できること</h2>
-        <ul class="check-list">
-          <li>経営者・管理職向けAI体験会</li>
-          <li>社員向け生成AI研修</li>
-          <li>AI導入・業務改善・制作支援</li>
-          <li>学生・若者向けAI講座</li>
-          <li>大学・行政・企業との地域連携</li>
-          <li>取材、登壇、共同企画</li>
+        <ul>
+          <li><span>01</span>経営者・管理職向けAI体験</li>
+          <li><span>02</span>社員向け生成AI研修</li>
+          <li><span>03</span>AI導入・業務改善・制作</li>
+          <li><span>04</span>学生・若者向けAI講座</li>
+          <li><span>05</span>大学・行政・企業との連携</li>
+          <li><span>06</span>取材・登壇・共同企画</li>
         </ul>
-        <div class="direct-mail">
-          <span>メールで直接連絡</span>
-          <a href={`mailto:${site.email}`}>{site.email}</a>
-        </div>
+        <div class="direct-mail"><span>DIRECT EMAIL</span><a href={`mailto:${site.email}`}>{site.email}</a></div>
       </aside>
-      <ContactForm />
+      <div data-reveal><ContactForm /></div>
     </div>
   </section>
 
-  <section class="section section-cloud faq-section">
-    <div class="container">
-      <p class="eyebrow">FAQ</p>
-      <h2 class="faq-title">相談前によくある質問</h2>
-      <div class="faq-list">
-        <details>
-          <summary>まだ導入するAIツールを決めていません。</summary>
-          <p>問題ありません。先に対象業務と確認方法を整理し、その条件に合うツールを選びます。</p>
-        </details>
-        <details>
-          <summary>愛媛県外やオンラインでも相談できますか。</summary>
-          <p>オンラインで対応できます。対面が必要な場合は、場所と日程を確認して個別に調整します。</p>
-        </details>
-        <details>
-          <summary>研修の料金は決まっていますか。</summary>
-          <p>参加人数、回数、題材、制作支援の範囲によって変わるため、内容を確認してお見積もりします。</p>
-        </details>
-        <details>
-          <summary>学生講座への協賛や課題提供を相談できますか。</summary>
-          <p>相談できます。人材紹介を前提にせず、講座支援、成果発表、匿名化した企業課題の提供など、安全な形から検討します。</p>
-        </details>
+  <section class="faq-section">
+    <div class="container-wide faq-grid">
+      <header data-reveal><p class="section-index">FAQ</p><h2>相談前に、<br />よくあること。</h2></header>
+      <div class="faq-list" data-reveal>
+        <details><summary>まだ導入するAIツールを決めていません。</summary><p>問題ありません。先に対象業務と確認方法を整理し、その条件に合うツールを選びます。</p></details>
+        <details><summary>愛媛県外やオンラインでも相談できますか。</summary><p>オンラインで対応できます。対面が必要な場合は、場所と日程を確認して個別に調整します。</p></details>
+        <details><summary>研修の料金は決まっていますか。</summary><p>参加人数、回数、題材、制作支援の範囲によって変わるため、内容を確認してお見積もりします。</p></details>
+        <details><summary>学生講座への協賛や課題提供を相談できますか。</summary><p>相談できます。人材紹介を前提にせず、講座支援、成果発表、匿名化した企業課題の提供など、安全な形から検討します。</p></details>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .contact-hero {
-    background:
-      radial-gradient(circle at 86% 20%, rgba(255, 210, 90, 0.32), transparent 26%),
-      linear-gradient(135deg, var(--sea-50), white 64%);
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 0.72fr 1.28fr;
-    gap: clamp(42px, 7vw, 86px);
-    align-items: start;
-  }
-
-  .contact-aside {
-    position: sticky;
-    top: calc(var(--header-height) + 34px);
-  }
-
-  .contact-aside h2 {
-    margin-bottom: 26px;
-    font-size: 34px;
-    letter-spacing: -0.05em;
-  }
-
-  .direct-mail {
-    margin-top: 34px;
-    padding-top: 24px;
-    border-top: 1px solid var(--line);
-  }
-
-  .direct-mail span {
-    display: block;
-    margin-bottom: 5px;
-    color: var(--ink-500);
-    font-size: 11px;
-  }
-
-  .direct-mail a {
-    color: var(--sea-700);
-    font-size: 13px;
-    font-weight: 800;
-    word-break: break-all;
-  }
-
-  .faq-title {
-    margin-bottom: 34px;
-    font-size: clamp(32px, 5vw, 48px);
-    letter-spacing: -0.055em;
-  }
-
-  .faq-list {
-    border-top: 1px solid var(--line);
-  }
-
-  .faq-list details {
-    border-bottom: 1px solid var(--line);
-  }
-
-  .faq-list summary {
-    position: relative;
-    padding: 24px 52px 24px 0;
-    font-weight: 800;
-    list-style: none;
-  }
-
-  .faq-list summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .faq-list summary::after {
-    position: absolute;
-    top: 22px;
-    right: 8px;
-    display: grid;
-    width: 30px;
-    height: 30px;
-    place-items: center;
-    border-radius: 50%;
-    color: var(--sea-700);
-    background: var(--sea-100);
-    content: "+";
-  }
-
-  .faq-list details[open] summary::after {
-    content: "−";
-  }
-
-  .faq-list details p {
-    max-width: 760px;
-    margin: -4px 0 24px;
-    color: var(--ink-600);
-    font-size: 14px;
-  }
-
+  .contact-hero::before { background: radial-gradient(circle at 38% 34%, var(--tide) 0, var(--blue) 40%, rgba(7,19,31,0) 72%); }
+  .contact-head { position: relative; z-index: 1; }
+  .contact-head h1 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .contact-section { padding: clamp(100px,13vw,180px) 0; background: var(--paper); }
+  .contact-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(60px,9vw,130px); align-items: start; }
+  .contact-aside { position: sticky; top: calc(var(--header-height) + 34px); }
+  .contact-aside h2 { margin: 0 0 36px; font-size: clamp(42px,5vw,66px); font-weight: 500; letter-spacing: -.07em; }
+  .contact-aside ul { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+  .contact-aside li { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+  .contact-aside li span { display: inline-block; width: 44px; color: var(--blue); font-size: 8px; }
+  .direct-mail { margin-top: 36px; }
+  .direct-mail span { display: block; margin-bottom: 6px; color: var(--blue); font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+  .direct-mail a { font-size: 12px; font-weight: 700; word-break: break-all; }
+  .faq-section { padding: clamp(100px,13vw,180px) 0; background: var(--bone); }
+  .faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(60px,9vw,130px); }
+  .faq-grid h2 { margin: 0; font-size: clamp(48px,7vw,92px); font-weight: 500; letter-spacing: -.08em; line-height: 1; }
+  .faq-list { border-top: 1px solid var(--line); }
+  .faq-list details { border-bottom: 1px solid var(--line); }
+  .faq-list summary { position: relative; padding: 24px 52px 24px 0; font-size: 14px; font-weight: 600; list-style: none; }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary::after { position: absolute; top: 20px; right: 4px; color: var(--blue); content: "+"; font-size: 24px; font-weight: 400; }
+  .faq-list details[open] summary::after { content: "−"; }
+  .faq-list details p { max-width: 680px; margin: -2px 0 24px; color: var(--ink-600); font-size: 13px; }
   @media (max-width: 880px) {
-    .contact-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .contact-aside {
-      position: static;
-    }
+    .contact-grid,
+    .faq-grid { grid-template-columns: 1fr; }
+    .contact-aside { position: static; }
   }
 </style>

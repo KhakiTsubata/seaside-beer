@@ -78,8 +78,8 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
   .article-hero {
     position: relative;
     overflow: hidden;
-    padding: 72px 0 88px;
-    background: linear-gradient(135deg, var(--sea-50), white 66%, var(--sun-100));
+    padding: calc(var(--header-height) + 72px) 0 88px;
+    background: linear-gradient(135deg, var(--sea-50), white 66%, #fff1eb);
   }
 
   .article-head-inner {
@@ -278,7 +278,7 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
 
   @media (max-width: 680px) {
     .article-hero {
-      padding: 50px 0 64px;
+      padding: calc(var(--header-height) + 50px) 0 64px;
     }
 
     .breadcrumbs {

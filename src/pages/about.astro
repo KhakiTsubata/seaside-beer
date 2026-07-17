@@ -1,299 +1,151 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionHeading from '../components/SectionHeading.astro';
 import { site } from '../data/site';
 ---
 
 <BaseLayout
   title="SeasideBeerについて｜松山からAIを仕事と地域の力へ"
-  description="SeasideBeerが目指すこと、現在地、代表・貝崎泰我のプロフィール、公開情報の考え方を紹介します。"
+  description="SeasideBeerの思想、目指す地域の姿、現在地、代表・貝崎泰我のプロフィールを紹介します。"
   image="/og.png"
 >
   <section class="page-hero about-hero">
-    <div class="container page-hero-inner">
+    <div class="container-wide about-head">
       <p class="eyebrow">ABOUT SEASIDEBEER</p>
-      <h1>AIで時間を取り戻し、<br />地域で使う。</h1>
-      <p class="lead">
-        SeasideBeerは、松山発のAI教育・AI導入支援プロジェクトです。
-        企業の仕事を変えることと、若者が仕事につながる力を持つことを、同じ地域の中で進めます。
-      </p>
+      <h1>人間の時間を、<br /><em>地域に返す。</em></h1>
+      <div class="about-lead">
+        <p>企業の仕事を変えることと、若者が仕事につながる力を持つこと。その二つを松山の中で循環させるために、SeasideBeerは始まっています。</p>
+        <span>AI IMPLEMENTATION<br />TALENT DEVELOPMENT<br />REGIONAL ECOSYSTEM</span>
+      </div>
     </div>
   </section>
 
-  <section class="section philosophy-section">
-    <div class="container split">
-      <div class="philosophy-mark" aria-hidden="true"><span>AI</span><i>+</i><span>SEA</span></div>
-      <div class="prose-block">
-        <p class="eyebrow">PHILOSOPHY</p>
+  <section class="philosophy-section">
+    <div class="container-wide philosophy-grid">
+      <p class="section-index" data-reveal>PHILOSOPHY</p>
+      <div data-reveal>
         <h2>{site.tagline}</h2>
         <p>
-          これは、AIが全部やってくれるという意味ではありません。
-          繰り返す作業や下準備をAIへ移し、人が地域、創造、関係づくり、事業づくりへ時間を使える状態を表しています。
+          これは、楽をするための言葉ではありません。繰り返す作業をAIへ渡し、人が会い、考え、つくり、地域で何かを始める時間を増やす。その状態を、仕事の中から実装するための言葉です。
         </p>
-        <p>便利なツールを紹介するだけでなく、仕事の任せ方と、人が判断する場所まで一緒に設計します。</p>
       </div>
     </div>
   </section>
 
-  <section class="section section-cloud vision-section">
+  <section class="vision-section">
     <div class="container-wide">
-      <SectionHeading
-        eyebrow="LONG-TERM VISION"
-        title="松山を、若者と新しい仕事が集まる街へ。"
-        lead="四国の若者、起業家、AI人材、若い会社が松山で出会い、仕事をつくれる状態へ近づけます。長期の構想は大きく持ち、最初の証拠は小さく具体的につくります。"
-      />
-      <div class="vision-grid">
-        <article><span>01</span><h2>企業の仕事を変える</h2><p>AI研修と導入支援で、地域企業の中に実際に使える成果物と手順を残す。</p></article>
-        <article><span>02</span><h2>若者が作品を持つ</h2><p>学んだという言葉ではなく、企業へ見せ、説明し、次の仕事へつながる完成物を残す。</p></article>
-        <article><span>03</span><h2>地域で循環させる</h2><p>企業の課題を学びの題材へ、若者の成果を企業の次の相談へ変えていく。</p></article>
+      <header data-reveal><p class="section-index">LONG-TERM VISION</p><h2>松山を、若者と新しい仕事が<br />集まる<em>四国の拠点</em>へ。</h2></header>
+      <div class="vision-list">
+        <article data-reveal><span>01</span><h3>企業の仕事を変える</h3><p>研修と実装で、地域企業に成果物と使える手順を残します。</p></article>
+        <article data-reveal><span>02</span><h3>若者が作品を持つ</h3><p>学習歴ではなく、企業へ見せられる制作物と説明力を育てます。</p></article>
+        <article data-reveal><span>03</span><h3>地域で循環させる</h3><p>企業課題を学びへ、若者の成果を次の仕事へつなぎます。</p></article>
       </div>
     </div>
   </section>
 
-  <section class="section founder-profile">
-    <div class="container split founder-grid">
-      <div class="profile-panel">
-        <p class="profile-kicker">REPRESENTATIVE</p>
+  <section class="founder-section">
+    <div class="container-wide founder-grid">
+      <div class="founder-type" data-reveal aria-label="代表 貝崎泰我">
+        <span>FOUNDER / REPRESENTATIVE</span>
+        <strong>TAIGA<br />KAIZAKI</strong>
+        <i>松山 / EHIME</i>
+      </div>
+      <div class="founder-copy" data-reveal>
+        <p class="section-index">PROFILE</p>
         <h2>{site.representative}</h2>
-        <p class="profile-role">SeasideBeer 代表 / 松山</p>
-        <div class="profile-initial" aria-hidden="true">TK</div>
-      </div>
-      <div class="prose-block">
-        <p class="eyebrow">PROFILE</p>
-        <h2>構想を、実際に使える形へ。</h2>
         <p>
-          愛媛・松山を拠点に、AI教育、AI導入支援、若者のAI人材育成、地域企業支援を進めています。
-          AIを回答者として使うだけでなく、調査、文章、資料、Web、仕組みづくりを移管する相手として扱っています。
+          愛媛・松山を拠点に、AI教育、AI導入支援、若者のAI人材育成、地域企業支援を進めています。AIを回答機として紹介するのではなく、調査、文章、資料、Web、仕組みづくりを移譲する相手として扱います。
         </p>
-        <ul class="profile-facts">
-          <li><span>現在の支援</span><strong>大学教員への生成AI活用支援</strong></li>
-          <li><span>現在の制作</span><strong>管理職向け生成AI書籍を執筆中</strong></li>
-          <li><span>現在の重点</span><strong>企業向けAI研修・導入支援</strong></li>
-        </ul>
-        <p class="profile-note">大学名、支援回数、契約内容などは、公開許可が確認できるまで掲載しません。</p>
+        <dl>
+          <div><dt>CURRENT WORK</dt><dd>松山の大学関係者への生成AI活用支援</dd></div>
+          <div><dt>WRITING</dt><dd>管理職向け生成AI書籍を執筆中</dd></div>
+          <div><dt>PRIORITY</dt><dd>企業向けAI研修・AI導入支援</dd></div>
+        </dl>
+        <small>所属先や件数など、確認できない情報は掲載していません。公開許可を得た実績から順次追加します。</small>
       </div>
     </div>
   </section>
 
-  <section class="section section-sea now-section">
-    <div class="container-wide">
-      <SectionHeading
-        eyebrow="WHERE WE ARE"
-        title="現在は、法人化前の準備段階です。"
-        lead="事業の規模や実績を大きく見せません。現在進めていること、確認が必要なこと、次に残す成果を分けて公開します。"
-        invert={true}
-      />
-      <div class="now-grid">
-        <article><span>進行中</span><h2>企業向け支援の営業商品化</h2><p>研修、体験会、月次支援の内容と、企業へ見せる成果物基準を整えています。</p></article>
-        <article><span>進行中</span><h2>若者向け4回講座の設計</h2><p>制作、修正、説明、発表まで含む講座を、大学・企業・スポンサーと接続できる形へ整えています。</p></article>
-        <article><span>要確認</span><h2>公開できる実績情報</h2><p>固有名詞、件数、写真、推薦文は、本人・関係者の許可が確認できたものから追加します。</p></article>
+  <section class="status-section">
+    <div class="container-wide status-grid">
+      <header data-reveal><p class="section-index">WHERE WE ARE</p><h2>現在は、<br /><em>法人化準備中</em>です。</h2></header>
+      <div class="status-copy" data-reveal>
+        <p>大きな組織や実績があるようには見せません。今進めている仕事、確認できた成果、次に取り組むことを、正確に公開していきます。</p>
+        <ol>
+          <li><span>NOW</span>企業向け支援の商品化と初期実績づくり</li>
+          <li><span>NEXT</span>4回の実践講座と最初の10人</li>
+          <li><span>THEN</span>企業・大学・行政との継続的な地域連携</li>
+        </ol>
       </div>
     </div>
   </section>
 
   <section class="section section-compact">
-    <div class="container-wide cta-panel">
+    <div class="container-wide cta-panel" data-reveal>
       <p class="eyebrow">WORK WITH US</p>
-      <h2>企業、大学、行政、地域の方からの相談を受け付けています。</h2>
-      <p>AI研修、業務改善、人材育成、成果発表、スポンサー連携について、決まっている範囲からお聞かせください。</p>
-      <a class="button button-dark" href="/contact/">SeasideBeerへ相談する <span aria-hidden="true">→</span></a>
+      <h2>同じ方向を見ている人と、仕事を始めたい。</h2>
+      <p>企業研修、業務改善、人材育成、大学・行政との共同企画について、決まっている範囲から話せます。</p>
+      <a class="button button-primary" href="/contact/">SeasideBeerへ相談する <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .about-hero {
-    background:
-      radial-gradient(circle at 88% 18%, rgba(56, 199, 227, 0.24), transparent 26%),
-      linear-gradient(135deg, var(--sand), white 56%, var(--sea-50));
+  .about-hero::before { right: -3%; background: radial-gradient(circle at 38% 34%, #ff9a69 0, var(--sunset) 19%, var(--blue) 54%, rgba(7,19,31,0) 72%); }
+  .about-head { position: relative; z-index: 1; }
+  .about-head h1 { margin: 0; }
+  .about-head h1 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .about-lead { display: flex; gap: 80px; align-items: flex-end; justify-content: space-between; margin: 58px 0 0 25%; }
+  .about-lead p { max-width: 600px; margin: 0; color: rgba(255,255,255,.64); line-height: 2; }
+  .about-lead span { flex: 0 0 auto; color: rgba(255,255,255,.35); font-size: 8px; letter-spacing: .14em; line-height: 2; }
+  .philosophy-section { padding: clamp(110px,15vw,220px) 0; background: var(--bone); }
+  .philosophy-grid { display: grid; grid-template-columns: .3fr 1fr; gap: 80px; }
+  .philosophy-grid h2 { max-width: 950px; margin: 0; font-family: "Noto Serif JP", serif; font-size: clamp(48px,7vw,94px); font-weight: 500; letter-spacing: -.07em; line-height: 1.28; }
+  .philosophy-grid div > p { max-width: 650px; margin: 56px 0 0 auto; color: var(--ink-600); line-height: 2.1; }
+  .vision-section { padding: clamp(110px,14vw,200px) 0; background: var(--paper); }
+  .vision-section header { margin-bottom: 80px; }
+  .vision-section h2 { max-width: 1120px; margin: 0; font-size: clamp(52px,8vw,112px); font-weight: 500; letter-spacing: -.09em; line-height: 1; }
+  .vision-section h2 em { color: var(--blue); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .vision-list { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .vision-list article { min-height: 330px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .vision-list span { color: var(--blue); font-size: 9px; }
+  .vision-list h3 { margin: 130px 0 14px; font-size: 24px; font-weight: 500; letter-spacing: -.04em; }
+  .vision-list p { margin: 0; color: var(--ink-600); font-size: 12px; }
+  .founder-section { padding: clamp(110px,14vw,200px) 0; color: white; background: var(--ink); }
+  .founder-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(60px,10vw,150px); align-items: center; }
+  .founder-type { position: relative; min-height: 640px; padding: 28px; overflow: hidden; background: var(--blue); }
+  .founder-type::before { position: absolute; right: -34%; bottom: -16%; width: 95%; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; box-shadow: 0 0 0 65px rgba(255,255,255,.04),0 0 0 130px rgba(255,255,255,.03); content: ""; }
+  .founder-type span { color: var(--tide); font-size: 8px; letter-spacing: .16em; }
+  .founder-type strong { position: absolute; bottom: 72px; left: 24px; font-size: clamp(58px,7vw,100px); font-weight: 500; letter-spacing: -.09em; line-height: .78; }
+  .founder-type i { position: absolute; bottom: 26px; left: 28px; color: rgba(255,255,255,.46); font-size: 8px; font-style: normal; letter-spacing: .15em; }
+  .founder-copy .section-index { color: var(--tide); }
+  .founder-copy h2 { margin: 0 0 34px; font-size: clamp(52px,7vw,96px); font-weight: 500; letter-spacing: -.08em; }
+  .founder-copy > p { color: rgba(255,255,255,.58); line-height: 2; }
+  .founder-copy dl { margin: 40px 0 24px; border-top: 1px solid var(--line-invert); }
+  .founder-copy dl div { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line-invert); }
+  .founder-copy dt { color: var(--tide); font-size: 8px; letter-spacing: .13em; }
+  .founder-copy dd { margin: 0; font-size: 12px; }
+  .founder-copy small { color: rgba(255,255,255,.36); font-size: 9px; line-height: 1.8; }
+  .status-section { padding: clamp(100px,13vw,180px) 0; background: var(--tide); }
+  .status-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(60px,10vw,150px); }
+  .status-section h2 { margin: 0; font-size: clamp(52px,7vw,96px); font-weight: 500; letter-spacing: -.08em; line-height: 1; }
+  .status-section h2 em { color: var(--blue); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .status-copy > p { margin: 0 0 38px; line-height: 2; }
+  .status-copy ol { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+  .status-copy li { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .status-copy span { display: inline-block; width: 80px; color: var(--blue); font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+  @media (max-width: 900px) {
+    .about-lead { margin-left: 0; }
+    .philosophy-grid,
+    .founder-grid,
+    .status-grid { grid-template-columns: 1fr; }
+    .vision-list { grid-template-columns: 1fr; }
+    .vision-list article { min-height: 240px; }
+    .vision-list h3 { margin-top: 74px; }
   }
-
-  .philosophy-mark {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 16px;
-    align-items: center;
-    justify-content: center;
-    min-height: 420px;
-    border-radius: 50% 50% 18% 50%;
-    color: white;
-    background: linear-gradient(145deg, var(--ink-950), var(--sea-600));
-    box-shadow: var(--shadow-lg);
-  }
-
-  .philosophy-mark span {
-    font-size: clamp(38px, 6vw, 68px);
-    font-weight: 900;
-    letter-spacing: -0.07em;
-  }
-
-  .philosophy-mark i {
-    color: var(--sun-400);
-    font-size: 24px;
-    font-style: normal;
-  }
-
-  .vision-grid,
-  .now-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .vision-grid article {
-    min-height: 330px;
-    padding: 34px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    background: white;
-  }
-
-  .vision-grid span,
-  .now-grid span {
-    color: var(--sea-700);
-    font-size: 10px;
-    font-weight: 850;
-  }
-
-  .vision-grid h2 {
-    margin: 78px 0 14px;
-    font-size: 23px;
-    letter-spacing: -0.04em;
-  }
-
-  .vision-grid p {
-    color: var(--ink-600);
-    font-size: 13px;
-  }
-
-  .profile-panel {
-    position: relative;
-    min-height: 520px;
-    padding: 42px;
-    overflow: hidden;
-    border-radius: var(--radius-lg);
-    color: white;
-    background: linear-gradient(155deg, var(--sea-600), var(--ink-950));
-    box-shadow: var(--shadow-lg);
-  }
-
-  .profile-kicker {
-    color: var(--sea-200);
-    font-size: 10px;
-    font-weight: 850;
-    letter-spacing: 0.18em;
-  }
-
-  .profile-panel h2 {
-    margin-top: 180px;
-    margin-bottom: 8px;
-    font-size: clamp(42px, 7vw, 68px);
-    letter-spacing: -0.07em;
-  }
-
-  .profile-role {
-    color: rgba(255, 255, 255, 0.66);
-    font-size: 13px;
-  }
-
-  .profile-initial {
-    position: absolute;
-    top: -70px;
-    right: -30px;
-    color: rgba(255, 255, 255, 0.06);
-    font-size: 240px;
-    font-weight: 950;
-    letter-spacing: -0.12em;
-    line-height: 1;
-  }
-
-  .profile-facts {
-    display: grid;
-    margin: 34px 0 22px;
-    padding: 0;
-    border-top: 1px solid var(--line);
-    list-style: none;
-  }
-
-  .profile-facts li {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 16px;
-    padding: 15px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 13px;
-  }
-
-  .profile-facts span {
-    color: var(--ink-500);
-  }
-
-  .profile-note {
-    color: var(--ink-500) !important;
-    font-size: 11px;
-  }
-
-  .now-grid article {
-    min-height: 260px;
-    padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .now-grid span {
-    display: inline-flex;
-    padding: 5px 9px;
-    border-radius: 999px;
-    color: var(--ink-950);
-    background: var(--sun-400);
-  }
-
-  .now-grid h2 {
-    margin: 54px 0 12px;
-    color: white;
-    font-size: 20px;
-  }
-
-  .now-grid p {
-    color: rgba(255, 255, 255, 0.58);
-    font-size: 12px;
-  }
-
-  @media (max-width: 880px) {
-    .vision-grid,
-    .now-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .vision-grid article,
-    .now-grid article {
-      min-height: auto;
-    }
-
-    .vision-grid h2,
-    .now-grid h2 {
-      margin-top: 34px;
-    }
-  }
-
   @media (max-width: 680px) {
-    .philosophy-mark {
-      min-height: 320px;
-    }
-
-    .profile-panel {
-      min-height: 420px;
-      padding: 30px 24px;
-    }
-
-    .profile-panel h2 {
-      margin-top: 160px;
-    }
-
-    .profile-facts li {
-      grid-template-columns: 1fr;
-      gap: 2px;
-    }
+    .about-lead { align-items: flex-start; flex-direction: column; gap: 30px; }
+    .philosophy-grid { gap: 30px; }
+    .founder-type { min-height: 500px; }
+    .founder-copy dl div { grid-template-columns: 1fr; gap: 5px; }
   }
 </style>

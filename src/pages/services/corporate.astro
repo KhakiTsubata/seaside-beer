@@ -1,369 +1,145 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import SectionHeading from '../../components/SectionHeading.astro';
 ---
 
 <BaseLayout
   title="企業向けAI研修・AI導入支援｜SeasideBeer"
-  description="松山・愛媛の企業向けに、経営者・管理職向けAI体験、社員研修、業務改善、月額AI導入支援を行います。"
+  description="松山を拠点に、経営者・管理職向けAI体験、社員研修、業務ごとのAI導入、月次改善を支援します。"
   image="/og.png"
 >
   <section class="page-hero corporate-hero">
-    <div class="container page-hero-inner">
-      <p class="eyebrow">FOR BUSINESS</p>
-      <h1>AI研修を、<br />現場で動く一つへ。</h1>
-      <p class="lead">
-        説明を聞いて終わる研修ではなく、実際の仕事を一つ選び、成果物と手順を残します。
-        松山・愛媛の企業を中心に、対面とオンラインで支援します。
-      </p>
+    <div class="container-wide corporate-head">
+      <p class="eyebrow">01 / FOR BUSINESS</p>
+      <div class="corporate-title">
+        <h1>AIを学ぶ日ではなく、<br /><em>仕事が一つ減る日</em>を。</h1>
+        <p>体験、研修、業務設計、制作、改善。知識を渡して終わらず、現場で使える仕組みまで一緒につくります。</p>
+      </div>
       <div class="page-hero-actions">
-        <a class="button button-primary" href="/contact/">相談内容を送る <span aria-hidden="true">→</span></a>
-        <a class="button button-ghost" href="#support-menu">支援メニューを見る</a>
+        <a class="button button-primary" href="/contact/">企業向け支援を相談する <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
 
-  <section class="section section-compact fit-strip">
-    <div class="container-wide fit-grid">
-      <p>こんな状態から相談できます</p>
-      <ul>
-        <li>何に使えるか整理できていない</li>
-        <li>一部の社員だけが使っている</li>
-        <li>研修後に定着しなかった</li>
-        <li>社内資料やWeb制作を速くしたい</li>
-      </ul>
+  <section class="service-thesis">
+    <div class="container-wide thesis-grid">
+      <p class="section-index" data-reveal>THE GAP</p>
+      <h2 data-reveal>研修の満足度と、<br />導入の成果は、<br /><em>別のものです。</em></h2>
+      <p data-reveal>
+        「便利だった」で終われば、翌週には元の仕事へ戻ります。対象業務、入力、確認、共有、改善までを決めて、初めてAIは現場の仕組みになります。
+      </p>
     </div>
   </section>
 
-  <section class="section" id="support-menu">
+  <section class="offer-section">
     <div class="container-wide">
-      <SectionHeading
-        eyebrow="SUPPORT MENU"
-        title="会社の現在地に合わせて、入口を変えます。"
-        lead="全社導入をいきなり目指しません。経営層の理解、社員の実践、個別業務の改善から、いま必要な入口を選びます。"
-      />
-      <div class="offer-grid">
-        <article class="offer-card offer-primary">
-          <p class="offer-label">START HERE</p>
-          <h2>経営者・管理職向け<br />AI体験会</h2>
-          <p>自社の仕事を題材に、生成AIへ任せられる範囲、確認が必要な場所、導入の優先順位を整理します。</p>
-          <dl>
-            <div><dt>対象</dt><dd>経営者、役員、管理職</dd></div>
-            <div><dt>持ち帰るもの</dt><dd>試す業務と確認方法の整理</dd></div>
-            <div><dt>形式</dt><dd>対面またはオンライン</dd></div>
-          </dl>
-        </article>
-        <article class="offer-card">
-          <p class="offer-label">TEAM TRAINING</p>
-          <h2>社員向け<br />実務研修</h2>
-          <p>参加者の職種に合わせ、文章、調査、会議、提案、資料制作など、実際の仕事で成果物をつくります。</p>
-          <dl>
-            <div><dt>対象</dt><dd>部門単位、プロジェクトチーム</dd></div>
-            <div><dt>持ち帰るもの</dt><dd>成果物、プロンプト、確認手順</dd></div>
-            <div><dt>形式</dt><dd>単発または複数回</dd></div>
-          </dl>
-        </article>
-        <article class="offer-card">
-          <p class="offer-label">IMPLEMENTATION</p>
-          <h2>AI導入・<br />業務改善支援</h2>
-          <p>研修だけでは進まない仕事へ入り、手順の整理、試作品の制作、運用ルールづくり、改善まで伴走します。</p>
-          <dl>
-            <div><dt>対象</dt><dd>具体的な改善業務がある企業</dd></div>
-            <div><dt>持ち帰るもの</dt><dd>動く試作品と運用手順</dd></div>
-            <div><dt>形式</dt><dd>個別プロジェクトまたは月次支援</dd></div>
-          </dl>
-        </article>
+      <header class="offer-head" data-reveal>
+        <p class="section-index">WHAT WE DO</p>
+        <h2>必要な地点から、<br />始められます。</h2>
+      </header>
+      <div class="offer-list">
+        <article data-reveal><span>01</span><div><p>EXECUTIVE SESSION</p><h3>経営者・管理職向けAI体験</h3></div><p>自社の業務を題材に、何を任せ、何を人が判断するかを短時間で整理します。</p></article>
+        <article data-reveal><span>02</span><div><p>TEAM TRAINING</p><h3>社員向け実践研修</h3></div><p>説明だけで終わらず、参加者が実際の資料や文章をその場で作り、直します。</p></article>
+        <article data-reveal><span>03</span><div><p>WORKFLOW BUILD</p><h3>業務ごとのAI導入・制作</h3></div><p>調査、議事録、提案書、広報、Webなど、一つの流れを小さく実装します。</p></article>
+        <article data-reveal><span>04</span><div><p>CONTINUOUS IMPROVEMENT</p><h3>月次の改善支援</h3></div><p>使われ方と成果を見直し、手順、テンプレート、確認基準を更新します。</p></article>
       </div>
-      <p class="price-note">料金は対象業務、参加人数、回数、制作範囲を確認したうえで個別にお見積もりします。</p>
     </div>
   </section>
 
-  <section class="section section-cloud">
-    <div class="container">
-      <SectionHeading
-        eyebrow="HOW WE WORK"
-        title="導入を、四つの区切りで進めます。"
-        lead="目的が曖昧なまま研修メニューを当てはめず、仕事の確認から始めます。"
-      />
-      <ol class="process-list">
-        <li>
-          <span>01</span>
-          <div><h2>状況を聞く</h2><p>対象となる仕事、関わる人、困っていること、情報管理の条件を確認します。</p></div>
-        </li>
-        <li>
-          <span>02</span>
-          <div><h2>一つに絞る</h2><p>効果とリスクを見て、最初に試す仕事と完成の基準を決めます。</p></div>
-        </li>
-        <li>
-          <span>03</span>
-          <div><h2>一緒につくる</h2><p>実際の資料やデータを使い、研修または実装支援の中で成果物をつくります。</p></div>
-        </li>
-        <li>
-          <span>04</span>
-          <div><h2>手順を残す</h2><p>人が確認する場所、再現方法、次に改善する点を共有し、現場へ戻します。</p></div>
-        </li>
+  <section class="method-section">
+    <div class="container-wide method-grid">
+      <header data-reveal>
+        <p class="section-index">DELIVERY SYSTEM</p>
+        <h2>現場へ移る、<br /><em>4つの段階。</em></h2>
+        <p>大きな構想より、使える一つを先に。成果を確認してから次へ広げます。</p>
+      </header>
+      <ol class="method-list" data-reveal>
+        <li><span>01 / FIND</span><strong>仕事を選ぶ</strong><p>時間、頻度、判断、機密性からAIへ渡す範囲を決める。</p></li>
+        <li><span>02 / PROTOTYPE</span><strong>一度、動かす</strong><p>実際の入力と成果物で、小さな試作をつくる。</p></li>
+        <li><span>03 / STANDARDIZE</span><strong>手順にする</strong><p>入力例、確認項目、保存先、担当者を明文化する。</p></li>
+        <li><span>04 / IMPROVE</span><strong>使って直す</strong><p>時間と品質を確認し、次に減らす仕事を決める。</p></li>
       </ol>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container split boundary-grid">
-      <div class="prose-block">
-        <p class="eyebrow">OUR BOUNDARY</p>
-        <h2>できることと、急がないこと。</h2>
-        <p>生成AIは便利ですが、何でも自動化する話にはしません。重要な判断や機密情報を含む仕事は、確認方法を決めてから進めます。</p>
-      </div>
-      <div class="boundary-cards">
-        <article>
-          <h3>一緒に進めやすいこと</h3>
-          <ul class="check-list">
-            <li>社内資料、提案、議事録、調査の改善</li>
-            <li>Web、LP、SNS、説明資料の制作</li>
-            <li>部門ごとのAI活用手順づくり</li>
-            <li>経営層と現場の認識合わせ</li>
-          </ul>
-        </article>
-        <article class="caution-card">
-          <h3>確認してから進めること</h3>
-          <ul>
-            <li>個人情報や機密情報を外部サービスへ入力する運用</li>
-            <li>法務・医療・金融など、専門判断をAIへ任せる設計</li>
-            <li>人の確認なしで外部へ自動送信・自動公開する仕組み</li>
-          </ul>
-        </article>
+  <section class="deliverable-section">
+    <div class="container-wide">
+      <header data-reveal><p class="section-index">WHAT REMAINS</p><h2>研修後に、<br />残るもの。</h2></header>
+      <div class="deliverable-grid" data-reveal>
+        <div><span>GUIDE</span><strong>現場向けの手順</strong></div>
+        <div><span>TEMPLATE</span><strong>繰り返し使える型</strong></div>
+        <div><span>OUTPUT</span><strong>実際の成果物</strong></div>
+        <div><span>NEXT</span><strong>次の改善課題</strong></div>
       </div>
     </div>
   </section>
 
   <section class="section section-compact">
-    <div class="container-wide cta-panel">
-      <p class="eyebrow">FIRST CONVERSATION</p>
-      <h2>研修が必要かどうかも、まだ決めなくて構いません。</h2>
-      <p>対象となる仕事と今の状態を伺い、研修、個別制作、継続支援のどれが先かを整理します。</p>
-      <a class="button button-dark" href="/contact/">企業向け支援を相談する <span aria-hidden="true">→</span></a>
+    <div class="container-wide cta-panel" data-reveal>
+      <p class="eyebrow">START WITH ONE WORKFLOW</p>
+      <h2>一番時間のかかる仕事を、一つ教えてください。</h2>
+      <p>研修が先か、制作が先か、まだ決まっていなくて構いません。対象業務と今の状態から整理します。</p>
+      <a class="button button-primary" href="/contact/">相談内容を送る <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .fit-strip {
-    padding: 34px 0;
-    border-bottom: 1px solid var(--line);
-    background: white;
-  }
-
-  .fit-grid {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 36px;
-    align-items: center;
-  }
-
-  .fit-grid > p {
-    margin: 0;
-    color: var(--sea-700);
-    font-size: 12px;
-    font-weight: 850;
-  }
-
-  .fit-grid ul {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .fit-grid li {
-    padding: 8px 12px;
-    border-radius: 999px;
-    color: var(--ink-700);
-    background: var(--cloud);
-    font-size: 11px;
-    font-weight: 720;
-  }
-
-  .offer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .offer-card {
-    display: flex;
-    min-height: 570px;
-    flex-direction: column;
-    padding: 36px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
-    background: white;
-  }
-
-  .offer-primary {
-    color: white;
-    background: var(--ink-950);
-  }
-
-  .offer-label {
-    margin-bottom: 30px;
-    color: var(--sea-700);
-    font-size: 10px;
-    font-weight: 850;
-    letter-spacing: 0.15em;
-  }
-
-  .offer-primary .offer-label {
-    color: var(--sun-400);
-  }
-
-  .offer-card h2 {
-    margin-bottom: 22px;
-    font-size: 30px;
-    letter-spacing: -0.05em;
-    line-height: 1.4;
-  }
-
-  .offer-card > p:not(.offer-label) {
-    color: var(--ink-600);
-    font-size: 14px;
-  }
-
-  .offer-primary > p:not(.offer-label) {
-    color: rgba(255, 255, 255, 0.68);
-  }
-
-  .offer-card dl {
-    display: grid;
-    gap: 0;
-    margin: auto 0 0;
-  }
-
-  .offer-card dl div {
-    display: grid;
-    grid-template-columns: 92px 1fr;
-    gap: 10px;
-    padding: 14px 0;
-    border-top: 1px solid var(--line);
-    font-size: 12px;
-  }
-
-  .offer-primary dl div {
-    border-color: rgba(255, 255, 255, 0.14);
-  }
-
-  .offer-card dt {
-    color: var(--ink-500);
-  }
-
-  .offer-card dd {
-    margin: 0;
-    font-weight: 750;
-  }
-
-  .offer-primary dt {
-    color: rgba(255, 255, 255, 0.48);
-  }
-
-  .price-note {
-    margin: 20px 0 0;
-    color: var(--ink-500);
-    font-size: 12px;
-  }
-
-  .process-list {
-    display: grid;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid var(--line);
-    list-style: none;
-  }
-
-  .process-list li {
-    display: grid;
-    grid-template-columns: 72px 1fr;
-    gap: 24px;
-    padding: 30px 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .process-list > li > span {
-    color: var(--sea-700);
-    font-size: 11px;
-    font-weight: 850;
-  }
-
-  .process-list h2 {
-    margin-bottom: 6px;
-    font-size: 22px;
-    letter-spacing: -0.035em;
-  }
-
-  .process-list p {
-    margin: 0;
-    color: var(--ink-600);
-    font-size: 14px;
-  }
-
-  .boundary-cards {
-    display: grid;
-    gap: 18px;
-  }
-
-  .boundary-cards article {
-    padding: 30px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    background: white;
-  }
-
-  .boundary-cards h3 {
-    margin-bottom: 18px;
-    font-size: 19px;
-  }
-
-  .caution-card {
-    background: var(--cloud) !important;
-  }
-
-  .caution-card ul {
-    margin-bottom: 0;
-    padding-left: 20px;
-    color: var(--ink-600);
-    font-size: 13px;
-  }
-
+  .corporate-hero::before { background: radial-gradient(circle at 34% 34%, var(--tide) 0, var(--blue) 35%, rgba(32,87,245,.03) 70%); }
+  .corporate-head { position: relative; z-index: 1; }
+  .corporate-title { display: grid; grid-template-columns: 1.3fr .7fr; gap: 70px; align-items: end; }
+  .corporate-title h1 { margin: 0; }
+  .corporate-title h1 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; font-weight: 500; }
+  .corporate-title > p { max-width: 480px; margin: 0 0 12px; color: rgba(255,255,255,.62); line-height: 2; }
+  .service-thesis { padding: clamp(110px,15vw,220px) 0; background: var(--bone); }
+  .thesis-grid { display: grid; grid-template-columns: .28fr 1fr; gap: 30px 80px; }
+  .thesis-grid h2 { margin: 0; font-size: clamp(58px,9vw,126px); font-weight: 500; letter-spacing: -.09em; line-height: .98; }
+  .thesis-grid h2 em { color: var(--blue); font-family: "Noto Serif JP", serif; font-style: normal; font-weight: 500; }
+  .thesis-grid > p:last-child { grid-column: 2; max-width: 660px; margin: 38px 0 0 auto; color: var(--ink-600); line-height: 2; }
+  .offer-section { padding: clamp(100px,13vw,180px) 0; }
+  .offer-head { display: grid; grid-template-columns: .32fr 1fr; margin-bottom: 72px; }
+  .offer-head h2 { margin: 0; font-size: clamp(50px,7vw,98px); font-weight: 500; letter-spacing: -.08em; line-height: 1; }
+  .offer-list { border-top: 1px solid var(--line); }
+  .offer-list article { display: grid; grid-template-columns: 72px 1fr .8fr; gap: 30px; align-items: center; padding: 34px 0; border-bottom: 1px solid var(--line); }
+  .offer-list article > span,
+  .offer-list article div p { color: var(--blue); font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+  .offer-list article div p { margin-bottom: 8px; }
+  .offer-list h3 { margin: 0; font-size: clamp(22px,2.5vw,34px); font-weight: 500; letter-spacing: -.04em; }
+  .offer-list article > p { margin: 0; color: var(--ink-600); font-size: 13px; }
+  .method-section { padding: clamp(100px,13vw,180px) 0; color: white; background: var(--ink); }
+  .method-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(60px,10vw,150px); }
+  .method-grid header .section-index { color: var(--tide); }
+  .method-grid header h2 { margin: 0; font-size: clamp(50px,7vw,96px); font-weight: 500; letter-spacing: -.08em; line-height: 1; }
+  .method-grid header h2 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .method-grid header > p:last-child { margin: 34px 0 0; color: rgba(255,255,255,.48); }
+  .method-list { margin: 0; padding: 0; border-top: 1px solid var(--line-invert); list-style: none; }
+  .method-list li { display: grid; grid-template-columns: 120px 1fr; gap: 8px 24px; padding: 26px 0; border-bottom: 1px solid var(--line-invert); }
+  .method-list span { color: var(--tide); font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+  .method-list strong { font-size: 20px; font-weight: 600; }
+  .method-list p { grid-column: 2; margin: 0; color: rgba(255,255,255,.48); font-size: 12px; }
+  .deliverable-section { padding: clamp(100px,13vw,180px) 0; background: var(--blue); color: white; }
+  .deliverable-section header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 70px; }
+  .deliverable-section .section-index { color: var(--tide); }
+  .deliverable-section h2 { margin: 0; font-size: clamp(54px,8vw,110px); font-weight: 500; letter-spacing: -.085em; line-height: 1; }
+  .deliverable-grid { display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid rgba(255,255,255,.28); border-left: 1px solid rgba(255,255,255,.28); }
+  .deliverable-grid div { min-height: 250px; padding: 24px; border-right: 1px solid rgba(255,255,255,.28); border-bottom: 1px solid rgba(255,255,255,.28); }
+  .deliverable-grid span { color: var(--tide); font-size: 8px; letter-spacing: .16em; }
+  .deliverable-grid strong { display: block; margin-top: 120px; font-size: 18px; }
   @media (max-width: 900px) {
-    .offer-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .offer-card {
-      min-height: auto;
-    }
-
-    .offer-card dl {
-      margin-top: 30px;
-    }
+    .corporate-title,
+    .method-grid { grid-template-columns: 1fr; }
+    .corporate-title { gap: 34px; }
+    .thesis-grid,
+    .offer-head { grid-template-columns: 1fr; gap: 28px; }
+    .thesis-grid > p:last-child { grid-column: 1; }
+    .deliverable-grid { grid-template-columns: repeat(2,1fr); }
   }
-
   @media (max-width: 680px) {
-    .fit-grid {
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .fit-grid ul {
-      display: grid;
-    }
-
-    .offer-card {
-      padding: 30px 24px;
-    }
-
-    .process-list li {
-      grid-template-columns: 42px 1fr;
-      gap: 14px;
-    }
+    .offer-list article { grid-template-columns: 40px 1fr; gap: 18px; }
+    .offer-list article > p { grid-column: 2; }
+    .method-list li { grid-template-columns: 1fr; }
+    .method-list p { grid-column: 1; }
+    .deliverable-grid { grid-template-columns: 1fr; }
+    .deliverable-grid div { min-height: 180px; }
+    .deliverable-grid strong { margin-top: 74px; }
   }
 </style>

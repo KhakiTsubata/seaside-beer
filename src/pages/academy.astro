@@ -1,322 +1,152 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionHeading from '../components/SectionHeading.astro';
 ---
 
 <BaseLayout
-  title="AI人材育成｜企業に見せられる10人をつくる｜SeasideBeer"
-  description="松山の学生・若者がAIを使ってWeb、資料、ポートフォリオなどを完成させ、企業へ説明できるところまで支援します。"
+  title="AI人材育成｜SeasideBeer"
+  description="企業に見せられる成果物を持つ若者を松山から育てる、SeasideBeerの実践型AI人材育成構想です。"
   image="/og.png"
 >
-  <section class="page-hero academy-hero">
-    <div class="container page-hero-inner">
-      <p class="eyebrow">AI TALENT DEVELOPMENT</p>
-      <h1>学んだ証拠を、<br />完成物で残す。</h1>
-      <p class="lead">
-        SeasideBeerの講座は、受講者数を最初の成果にしません。
-        AIを使ってつくり、自分の言葉で説明し、企業に見せられる10人を最初の基準に置きます。
-      </p>
-      <div class="page-hero-actions">
-        <a class="button button-primary" href="/contact/">講座・連携を相談する <span aria-hidden="true">→</span></a>
-        <a class="button button-ghost" href="#program">講座設計を見る</a>
+  <section class="academy-hero">
+    <div class="academy-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="container-wide academy-head">
+      <p class="eyebrow">02 / FOR TALENT</p>
+      <h1>企業に見せる、<br /><em>10人</em>を。</h1>
+      <div class="academy-lead">
+        <p>修了証ではなく、見せられるURLと、自分の言葉で説明できる力を。松山の若者が、地域企業の次の仕事につながるところまで設計します。</p>
+        <a class="button button-primary" href="/contact/">講座・連携を相談する <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
 
-  <section class="section kpi-section">
-    <div class="container-wide kpi-grid">
-      <div class="kpi-number" aria-label="10人"><strong>10</strong><span>PEOPLE</span></div>
-      <div class="prose-block">
-        <p class="eyebrow">FIRST KPI</p>
-        <h2>企業に見せられる10人。</h2>
-        <p>
-          HP、LP、自己紹介ページ、ポートフォリオ、資料、小さなWebアプリ。
-          何をつくったかだけでなく、AIへ何を任せ、自分でどこを直したかまで説明できる状態を目指します。
-        </p>
+  <section class="target-section">
+    <div class="container-wide target-grid">
+      <div class="target-number" data-reveal><span>FIRST MILESTONE</span><strong>10</strong><small>PEOPLE WITH PROOF</small></div>
+      <div class="target-copy" data-reveal>
+        <p class="section-index">THE FIRST GOAL</p>
+        <h2>人数ではなく、<br /><em>証拠</em>を数える。</h2>
+        <p>何人集まったかより、何を作り、どう直し、どう説明できるか。企業が実物を見て次の会話を始められる状態を、最初の基準にします。</p>
       </div>
     </div>
   </section>
 
-  <section class="section section-cloud" id="program">
+  <section class="curriculum-section">
     <div class="container-wide">
-      <SectionHeading
-        eyebrow="PROGRAM"
-        title="2時間×4回。毎回、完成へ近づける。"
-        lead="長い講義より、手を動かす時間を取ります。題材と参加者に合わせて調整しますが、基本の流れは四つです。"
-      />
-      <div class="lesson-grid">
-        <article><span>DAY 1</span><h2>仕事を選ぶ</h2><p>AIに何を任せるか、誰のために何をつくるかを決めます。ツールの基礎も実際の題材で覚えます。</p></article>
-        <article><span>DAY 2</span><h2>形にする</h2><p>Codex、Claude Code、生成AIサービスなどを使い、制作物の最初の形を動かします。</p></article>
-        <article><span>DAY 3</span><h2>直して伝える</h2><p>使う人の視点で修正し、作り方、判断したこと、AIの間違いを説明できるようにします。</p></article>
-        <article><span>DAY 4</span><h2>外へ見せる</h2><p>成果発表またはデモを行い、企業、大学、地域の人から質問とフィードバックを受けます。</p></article>
+      <header data-reveal><p class="section-index">4 SESSIONS / 2 HOURS EACH</p><h2>作る。直す。<br />説明する。見せる。</h2></header>
+      <ol class="curriculum-list">
+        <li data-reveal><span>DAY 01</span><div><p>CHOOSE</p><h3>課題を選ぶ</h3></div><p>誰の、どんな困りごとを変えるのか。完成条件と見せる相手を決めます。</p></li>
+        <li data-reveal><span>DAY 02</span><div><p>BUILD</p><h3>AIと作る</h3></div><p>調査、文章、資料、Web、小さなアプリなど、実際に触れられる形へ進めます。</p></li>
+        <li data-reveal><span>DAY 03</span><div><p>EDIT</p><h3>人が直す</h3></div><p>誤り、弱さ、使いにくさを見つけ、自分の判断で品質を上げます。</p></li>
+        <li data-reveal><span>DAY 04</span><div><p>SHOW</p><h3>外へ見せる</h3></div><p>成果発表またはデモを行い、企業や地域の人から質問とフィードバックを受けます。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="output-section">
+    <div class="container-wide output-grid">
+      <header data-reveal><p class="section-index">OUTPUT FIRST</p><h2>最後に残るのは、<br />肩書きではなく、<em>作品。</em></h2></header>
+      <div class="output-system" data-reveal>
+        <article><span>WEB</span><strong>HP / LP / Portfolio</strong><i>↗</i></article>
+        <article><span>DOC</span><strong>企画書 / 営業資料 / Report</strong><i>↗</i></article>
+        <article><span>APP</span><strong>課題を解く小さな Web App</strong><i>↗</i></article>
+        <article><span>STORY</span><strong>AIと自分の判断を説明する制作記録</strong><i>↗</i></article>
       </div>
     </div>
   </section>
 
-  <section class="section output-section">
-    <div class="container split">
-      <div class="prose-block">
-        <p class="eyebrow">OUTPUT FIRST</p>
-        <h2>修了証より、見せられるURLを。</h2>
-        <p>講座を終えた後も、制作物はポートフォリオとして残します。完成度を競うだけでなく、依頼を聞き、途中で直し、最後に説明する過程を大切にします。</p>
+  <section class="partner-section">
+    <div class="container-wide partner-grid">
+      <div data-reveal>
+        <p class="section-index">FOR PARTNERS</p>
+        <h2>若者の負担を抑え、<br />地域で育てる。</h2>
       </div>
-      <div class="output-list">
-        <article><span>WEB</span><h3>HP・LP・自己紹介サイト</h3></article>
-        <article><span>DOC</span><h3>企画書・営業資料・調査レポート</h3></article>
-        <article><span>APP</span><h3>課題を一つ解く小さなWebアプリ</h3></article>
-        <article><span>STORY</span><h3>AIと自分の判断を説明する制作記録</h3></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-sea connection-section">
-    <div class="container-wide">
-      <SectionHeading
-        eyebrow="REGIONAL CONNECTION"
-        title="講座を、地域の中で閉じない。"
-        lead="企業、大学、行政、スポンサーへ成果を見せ、次の仕事、次の講座、次の協力へつなげます。"
-        invert={true}
-      />
-      <div class="connection-flow" aria-label="学びから仕事への流れ">
-        <div><span>01</span><strong>若者がつくる</strong><p>実際に見せられる制作物を完成させる</p></div>
-        <i aria-hidden="true">→</i>
-        <div><span>02</span><strong>企業が見る</strong><p>発表やデモで仕事との接点を見つける</p></div>
-        <i aria-hidden="true">→</i>
-        <div><span>03</span><strong>地域で続ける</strong><p>企業課題、研修、協賛へ循環させる</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section sponsor-section">
-    <div class="container split">
-      <div class="prose-block">
-        <p class="eyebrow">FOR PARTNERS</p>
-        <h2>学生の負担を抑え、地域で育てる。</h2>
-        <p>学生価格だけで講座を成立させず、企業、大学、行政、スポンサーが育成費用を支える形を優先します。</p>
-      </div>
-      <div class="partner-card">
-        <h3>連携を相談できる方</h3>
-        <ul class="check-list">
-          <li>学生や若者へAI講座を届けたい大学・教育関係者</li>
-          <li>地域のAI人材育成を支援したい企業</li>
-          <li>成果発表の場や題材を提供できる行政・団体</li>
-          <li>小さな企業課題を教材として提示できる事業者</li>
+      <div class="partner-copy" data-reveal>
+        <p>企業、大学、行政、支援者と、受講機会、課題、発表の場をつなぎます。人材紹介を急がず、学びと成果を安全に見せられる関係から始めます。</p>
+        <ul>
+          <li><span>01</span>講座への協賛・会場提供</li>
+          <li><span>02</span>匿名化した企業課題の提供</li>
+          <li><span>03</span>成果発表・デモデイへの参加</li>
+          <li><span>04</span>大学・行政との共同企画</li>
         </ul>
-        <a class="button button-dark" href="/contact/">連携を相談する <span aria-hidden="true">→</span></a>
+        <a class="button button-dark" href="/contact/">連携を相談する <span aria-hidden="true">↗</span></a>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-compact">
+    <div class="container-wide cta-panel" data-reveal>
+      <p class="eyebrow">BUILD THE FIRST TEN</p>
+      <h2>最初の10人を、一緒につくる。</h2>
+      <p>受講希望、大学・学校との連携、企業協賛、課題提供について相談を受け付けています。</p>
+      <a class="button button-primary" href="/contact/">相談内容を送る <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .academy-hero {
-    background:
-      radial-gradient(circle at 86% 22%, rgba(255, 210, 90, 0.38), transparent 26%),
-      linear-gradient(135deg, var(--sea-50), white 62%);
+  .academy-hero { position: relative; overflow: hidden; padding: calc(var(--header-height) + 92px) 0 100px; color: white; background: var(--blue); }
+  .academy-head { position: relative; z-index: 1; }
+  .academy-head .eyebrow { color: var(--tide); }
+  .academy-head h1 { margin: 0; font-size: clamp(74px,10vw,138px); font-weight: 500; letter-spacing: -.1em; line-height: .88; }
+  .academy-head h1 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; font-weight: 500; }
+  .academy-lead { display: flex; gap: 50px; align-items: flex-end; justify-content: space-between; margin: 62px 0 0 30%; }
+  .academy-lead p { max-width: 600px; margin: 0; color: rgba(255,255,255,.66); line-height: 2; }
+  .academy-lines { position: absolute; inset: 0; pointer-events: none; }
+  .academy-lines i { position: absolute; top: 54%; left: 70%; width: 48vw; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; transform: translate(-50%,-50%); }
+  .academy-lines i:nth-child(2) { width: 64vw; }
+  .academy-lines i:nth-child(3) { width: 80vw; }
+  .academy-lines i:nth-child(4) { width: 96vw; }
+  .target-section { padding: clamp(100px,14vw,200px) 0; background: var(--bone); }
+  .target-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(60px,10vw,160px); align-items: center; }
+  .target-number span,
+  .target-number small { display: block; color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: .18em; }
+  .target-number strong { display: block; margin: -20px 0 -12px -.08em; color: var(--blue); font-size: clamp(190px,28vw,410px); font-weight: 500; letter-spacing: -.13em; line-height: 1; }
+  .target-copy h2 { margin: 0; font-size: clamp(52px,7.5vw,106px); font-weight: 500; letter-spacing: -.085em; line-height: 1; }
+  .target-copy h2 em { color: var(--blue); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .target-copy > p:last-child { max-width: 600px; margin: 38px 0 0; color: var(--ink-600); line-height: 2; }
+  .curriculum-section { padding: clamp(100px,13vw,180px) 0; background: var(--paper); }
+  .curriculum-section header { display: grid; grid-template-columns: .35fr 1fr; margin-bottom: 70px; }
+  .curriculum-section header h2 { margin: 0; font-size: clamp(52px,8vw,110px); font-weight: 500; letter-spacing: -.085em; line-height: 1; }
+  .curriculum-list { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+  .curriculum-list li { display: grid; grid-template-columns: 90px .8fr 1fr; gap: 30px; align-items: center; padding: 34px 0; border-bottom: 1px solid var(--line); }
+  .curriculum-list li > span,
+  .curriculum-list div p { color: var(--blue); font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+  .curriculum-list div p { margin-bottom: 8px; }
+  .curriculum-list h3 { margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -.04em; }
+  .curriculum-list li > p { margin: 0; color: var(--ink-600); font-size: 13px; }
+  .output-section { padding: clamp(100px,13vw,180px) 0; color: white; background: var(--ink); }
+  .output-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(60px,10vw,150px); }
+  .output-section .section-index { color: var(--tide); }
+  .output-section h2 { margin: 0; font-size: clamp(52px,7vw,94px); font-weight: 500; letter-spacing: -.08em; line-height: 1; }
+  .output-section h2 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; }
+  .output-system { border-top: 1px solid var(--line-invert); }
+  .output-system article { display: grid; grid-template-columns: 70px 1fr auto; gap: 20px; align-items: center; padding: 28px 0; border-bottom: 1px solid var(--line-invert); }
+  .output-system span { color: var(--tide); font-size: 8px; letter-spacing: .14em; }
+  .output-system strong { font-size: 16px; font-weight: 500; }
+  .output-system i { font-size: 22px; font-style: normal; }
+  .partner-section { padding: clamp(100px,13vw,180px) 0; background: var(--tide); }
+  .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(60px,10vw,150px); }
+  .partner-section h2 { margin: 0; font-size: clamp(52px,7vw,96px); font-weight: 500; letter-spacing: -.08em; line-height: 1; }
+  .partner-copy > p { margin: 0 0 38px; line-height: 2; }
+  .partner-copy ul { margin: 0 0 40px; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+  .partner-copy li { padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .partner-copy li span { margin-right: 24px; color: var(--blue); font-size: 9px; }
+  @media (max-width: 900px) {
+    .academy-lead { margin-left: 0; }
+    .target-grid,
+    .output-grid,
+    .partner-grid { grid-template-columns: 1fr; }
+    .target-number { text-align: center; }
+    .target-number strong { font-size: min(60vw,390px); }
   }
-
-  .kpi-grid {
-    display: grid;
-    grid-template-columns: 0.75fr 1.25fr;
-    gap: clamp(48px, 9vw, 120px);
-    align-items: center;
-  }
-
-  .kpi-number {
-    display: grid;
-    aspect-ratio: 1;
-    place-items: center;
-    align-content: center;
-    border-radius: 50% 50% 18% 50%;
-    color: white;
-    background: linear-gradient(145deg, var(--sea-500), var(--ink-900));
-    box-shadow: var(--shadow-lg);
-  }
-
-  .kpi-number strong {
-    font-size: clamp(92px, 15vw, 170px);
-    letter-spacing: -0.1em;
-    line-height: 0.85;
-  }
-
-  .kpi-number span {
-    margin-top: 20px;
-    color: var(--sea-200);
-    font-size: 10px;
-    font-weight: 850;
-    letter-spacing: 0.28em;
-  }
-
-  .lesson-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .lesson-grid article {
-    min-height: 370px;
-    padding: 32px 26px;
-    border-right: 1px solid var(--line);
-  }
-
-  .lesson-grid article:first-child {
-    border-left: 1px solid var(--line);
-  }
-
-  .lesson-grid span {
-    color: var(--sea-700);
-    font-size: 10px;
-    font-weight: 850;
-    letter-spacing: 0.14em;
-  }
-
-  .lesson-grid h2 {
-    margin: 72px 0 16px;
-    font-size: 25px;
-    letter-spacing: -0.04em;
-  }
-
-  .lesson-grid p {
-    margin: 0;
-    color: var(--ink-600);
-    font-size: 13px;
-  }
-
-  .output-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  .output-list article {
-    min-height: 170px;
-    padding: 24px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    background: var(--cloud);
-  }
-
-  .output-list span {
-    color: var(--sea-700);
-    font-size: 9px;
-    font-weight: 850;
-    letter-spacing: 0.16em;
-  }
-
-  .output-list h3 {
-    margin: 38px 0 0;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  .connection-flow {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr;
-    gap: 24px;
-    align-items: center;
-  }
-
-  .connection-flow > div {
-    min-height: 230px;
-    padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .connection-flow span {
-    color: var(--sun-400);
-    font-size: 10px;
-    font-weight: 850;
-  }
-
-  .connection-flow strong {
-    display: block;
-    margin: 52px 0 8px;
-    color: white;
-    font-size: 20px;
-  }
-
-  .connection-flow p {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.58);
-    font-size: 12px;
-  }
-
-  .connection-flow i {
-    color: var(--sun-400);
-    font-style: normal;
-  }
-
-  .partner-card {
-    padding: 36px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
-    background: var(--cloud);
-  }
-
-  .partner-card h3 {
-    margin-bottom: 24px;
-    font-size: 22px;
-  }
-
-  .partner-card .button {
-    margin-top: 18px;
-  }
-
-  @media (max-width: 920px) {
-    .lesson-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .lesson-grid article:nth-child(3) {
-      border-left: 1px solid var(--line);
-    }
-
-    .connection-flow {
-      grid-template-columns: 1fr;
-    }
-
-    .connection-flow i {
-      transform: rotate(90deg);
-      justify-self: center;
-    }
-  }
-
   @media (max-width: 680px) {
-    .kpi-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .kpi-number {
-      width: min(100%, 340px);
-      margin-inline: auto;
-    }
-
-    .lesson-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .lesson-grid article,
-    .lesson-grid article:first-child,
-    .lesson-grid article:nth-child(3) {
-      min-height: 0;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-    .lesson-grid h2 {
-      margin-top: 34px;
-    }
-
-    .output-list {
-      grid-template-columns: 1fr;
-    }
-
-    .partner-card {
-      padding: 30px 24px;
-    }
+    .academy-hero { padding-top: calc(var(--header-height) + 70px); }
+    .academy-head h1 { font-size: clamp(54px,14vw,66px); }
+    .academy-lead { align-items: flex-start; flex-direction: column; margin-top: 44px; }
+    .academy-lead .button { width: 100%; }
+    .curriculum-section header { grid-template-columns: 1fr; gap: 24px; }
+    .curriculum-list li { grid-template-columns: 48px 1fr; gap: 18px; }
+    .curriculum-list li > p { grid-column: 2; }
+    .output-system article { grid-template-columns: 52px 1fr auto; }
   }
 </style>

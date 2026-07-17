@@ -1,6 +1,4 @@
 ---
-import logo from '../assets/brand/logo-icon.png';
-import { Image } from 'astro:assets';
 import { primaryNav } from '../data/site';
 
 const currentPath = Astro.url.pathname;
@@ -11,8 +9,8 @@ const isActive = (href: string) =>
 <header class="site-header" data-header>
   <div class="header-inner container-wide">
     <a class="brand" href="/" aria-label="SeasideBeer トップページ">
-      <Image src={logo} width={44} height={44} alt="" loading="eager" />
-      <span>SeasideBeer</span>
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-word"><b>SEASIDE</b><b>BEER</b></span>
     </a>
 
     <button
@@ -34,10 +32,7 @@ const isActive = (href: string) =>
           </a>
         ))}
       </div>
-      <a class="button button-small button-primary nav-contact" href="/contact/">
-        相談する
-        <span aria-hidden="true">↗</span>
-      </a>
+      <a class="nav-contact" href="/contact/"><span>Start a project</span><i aria-hidden="true">↗</i></a>
     </nav>
   </div>
 </header>
@@ -56,6 +51,9 @@ const isActive = (href: string) =>
   };
 
   if (header && toggle instanceof HTMLButtonElement && nav instanceof HTMLElement) {
+    const syncHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 12);
+    syncHeader();
+    window.addEventListener('scroll', syncHeader, { passive: true });
     toggle.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') !== 'true';
       toggle.setAttribute('aria-expanded', String(open));
