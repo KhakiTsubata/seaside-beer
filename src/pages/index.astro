@@ -30,9 +30,13 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
         <p class="hero-location">MATSUYAMA / EHIME</p>
         <h1 id="home-title"><span>AIと、</span><span>地域のあいだに。</span></h1>
         <p class="hero-lead">
-          企業には、AIで減らせる仕事がある。若者には、AIとつくれる仕事がある。<br />
-          SeasideBeerは、その両方を松山で動かします。
+          AIがひらくのは、効率だけじゃない。<br />
+          働く人の時間と、若者の選択肢を、松山から増やしていく。
         </p>
+
+        <div class="mobile-hero-visual" aria-hidden="true">
+          <span>FROM MATSUYAMA</span>
+        </div>
 
         <nav class="hero-services" aria-label="主なサービス">
           <a href="/services/corporate/">
@@ -69,12 +73,12 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
         <p>OUR POINT OF VIEW</p>
       </div>
       <div class="thought-copy" data-reveal>
-        <p class="jp-kicker">AIは、空いた時間の使い道まで決めてくれない。</p>
-        <h2>減らした仕事の先に、<br /><em>何を増やすか。</em></h2>
+        <p class="jp-kicker">AIで、人の時間はどこへ向かうか。</p>
+        <h2>人の時間を、<br /><em>未来へ返す。</em></h2>
         <div class="thought-note">
           <p>
-            調べる、まとめる、下書きをつくる。AIへ任せられる作業は増えました。
-            私たちがつくりたいのは、ただ速く働く会社ではありません。顧客と話す時間、若者を育てる時間、新しい商売を考える時間を、松山の企業へ戻します。
+            調べる、まとめる、下書きをつくる。AIに任せられる作業は、これからも増えていきます。
+            だからこそ、浮いた時間を何に使うかを考えたい。顧客と話す。若者を育てる。まだない商売をつくる。AIの先に生まれる人の時間を、松山の未来へつなぎます。
           </p>
           <a class="water-link" href="/about/">SeasideBeerについて <span aria-hidden="true">→</span></a>
         </div>
@@ -86,7 +90,7 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
     <div class="container-wide">
       <header class="water-heading" data-reveal>
         <div><span>02</span><p>WHAT WE DO</p></div>
-        <h2>研修の日に、<br /><em>一つ完成させる。</em></h2>
+        <h2>AIを、知識から<br /><em>現場の力へ。</em></h2>
       </header>
 
       <div class="service-current">
@@ -128,7 +132,7 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
       </div>
       <div class="proof-copy" data-reveal>
         <p class="section-index">企業に見せられる10人</p>
-        <h2>10人分の作品を、<br /><em>最初の実績</em>にする。</h2>
+        <h2>10人の作品から、<br /><em>未来を見せる。</em></h2>
         <p>
           一人ずつ完成物を持ち、どこをAIへ任せ、どこを自分で直したか説明する。最初の10人がそこまで届いたら、企業、大学、地域へ見せます。
         </p>
@@ -146,7 +150,7 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
     <div class="container-wide">
       <header class="water-heading journal-heading" data-reveal>
         <div><span>03</span><p>ACTIVITY / JOURNAL</p></div>
-        <h2>動いていることを、<br /><em>途中から公開する。</em></h2>
+        <h2>動きながら、<br /><em>言葉にしていく。</em></h2>
         <a class="water-link" href="/insights/">すべて見る <span aria-hidden="true">→</span></a>
       </header>
 
@@ -171,9 +175,9 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
 
   <section class="home-cta">
     <div class="container-wide home-cta-inner" data-reveal>
-      <p>START WITH ONE REAL TASK.</p>
-      <h2>AIの相談は、<br /><em>仕事の話から。</em></h2>
-      <a href="/contact/">相談内容を送る <span aria-hidden="true">→</span></a>
+      <p>START WHERE YOU ARE.</p>
+      <h2>まだ名前のない、<br /><em>相談から。</em></h2>
+      <a href="/contact/">話してみる <span aria-hidden="true">→</span></a>
     </div>
   </section>
 </BaseLayout>
@@ -231,6 +235,7 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
   .hero-copy h1 span { display: block; }
   .hero-copy h1 span:last-child { white-space: nowrap; }
   .hero-lead { max-width: 570px; margin-bottom: 34px; color: rgba(4,42,83,.7); font-size: 14px; line-height: 2; }
+  .mobile-hero-visual { display: none; }
 
   .hero-services { display: grid; width: min(100%, 560px); grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
   .hero-services a {
@@ -383,25 +388,72 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
   }
 
   @media (max-width: 760px) {
-    .water-hero { min-height: 1060px; }
-    .hero-layout { min-height: 1060px; align-items: start; padding-top: calc(var(--header-height) + 72px); }
-    .hero-copy { width: 100%; }
-    .hero-location { margin-bottom: 22px; }
-    .hero-copy h1 { max-width: 96%; margin-bottom: 20px; font-size: clamp(48px,13vw,70px); line-height: 1.22; }
-    .hero-copy h1 span:last-child { white-space: normal; }
-    .hero-lead { max-width: 92%; font-size: 12px; line-height: 1.9; }
-    .hero-services { gap: 8px; }
-    .hero-services a { min-height: 132px; padding: 15px 10px 12px; }
-    .hero-services strong { font-size: 13px; }
-    .hero-services i { width: 28px; height: 28px; }
-    .hero-action { margin-top: 22px; }
-    .hero-wash { width: 100%; height: 58%; background: linear-gradient(180deg, rgba(223,248,255,.98) 0%, rgba(223,248,255,.9) 74%, rgba(223,248,255,0)); }
-    .hero-photo-city { display: none; }
-    .hero-photo-workshop { top: auto; right: -24%; bottom: 19%; width: 116%; height: 31%; border-radius: 46% 0 0 48% / 52% 0 0 48%; background-position: 48% 50%; background-size: cover; }
-    .hero-photo-coast { right: -20%; bottom: -5%; left: -25%; height: 28%; background-position: 50% 54%; background-size: cover; }
-    .ribbon-one { bottom: 8%; height: 20%; }
-    .ribbon-two { bottom: -1%; }
-    .matsuyama-badge { right: 5%; bottom: 4%; width: 112px; }
+    .water-hero {
+      min-height: auto;
+      background:
+        radial-gradient(circle at 92% 6%, rgba(255,255,255,.9), transparent 30%),
+        linear-gradient(155deg, #e7faff 0%, #c8f2ff 58%, #b5ebfa 100%);
+    }
+    .hero-layout { display: block; min-height: auto; padding-top: calc(var(--header-height) + 46px); padding-bottom: 36px; }
+    .hero-copy { width: 100%; padding-top: 0; }
+    .hero-location { margin-bottom: 25px; font-size: 9px; letter-spacing: .2em; }
+    .hero-copy h1 { max-width: none; margin-bottom: 24px; font-size: clamp(36px,10.8vw,46px); letter-spacing: -.065em; line-height: 1.24; }
+    .hero-copy h1 span:last-child { white-space: nowrap; }
+    .hero-lead { max-width: 35em; margin-bottom: 28px; color: rgba(4,42,83,.72); font-size: 14px; line-height: 1.85; }
+    .hero-caustics { inset: -8% -42% auto 18%; height: 42%; opacity: .42; }
+    .hero-wash,
+    .hero-collage,
+    .matsuyama-badge { display: none; }
+
+    .mobile-hero-visual {
+      position: relative;
+      display: flex;
+      height: clamp(250px,72vw,330px);
+      align-items: flex-end;
+      margin-bottom: 14px;
+      padding: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.76);
+      border-radius: 30px 30px 12px 12px;
+      background:
+        linear-gradient(180deg, rgba(4,71,142,.02) 42%, rgba(4,48,94,.62) 100%),
+        url('/images/workshop-youth.webp') 52% 48% / cover;
+      box-shadow: 0 22px 60px rgba(4,71,142,.13);
+    }
+    .mobile-hero-visual::after { position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(255,255,255,.25); content: ""; }
+    .mobile-hero-visual span { position: relative; z-index: 1; color: rgba(255,255,255,.86); font-size: 9px; font-weight: 700; letter-spacing: .22em; }
+
+    .hero-services {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 12px 12px 24px 24px;
+      background: rgba(255,255,255,.58);
+      box-shadow: 0 18px 48px rgba(4,71,142,.08);
+      backdrop-filter: blur(14px);
+    }
+    .hero-services a,
+    .hero-services a:nth-child(2),
+    .hero-services a:nth-child(3) {
+      display: grid;
+      min-height: 62px;
+      grid-template-columns: 36px 1fr 30px;
+      align-items: center;
+      padding: 0 14px;
+      border: 0;
+      border-bottom: 1px solid rgba(4,71,142,.11);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+    .hero-services a:last-child { border-bottom: 0; }
+    .hero-services a:hover { background: rgba(255,255,255,.42); box-shadow: none; transform: none; }
+    .service-number { font-size: 8px; }
+    .hero-services strong { align-self: auto; font-size: 15px; }
+    .hero-services i { width: 26px; height: 26px; align-self: auto; font-size: 12px; }
+    .hero-action { width: 100%; min-height: 56px; justify-content: space-between; margin-top: 16px; padding-left: 22px; font-size: 14px; }
 
     .thought-grid,
     .water-heading { grid-template-columns: 1fr; gap: 34px; }
@@ -414,14 +466,17 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
     .thought-note .water-link { justify-self: start; }
     .service-current,
     .journal-grid { grid-template-columns: 1fr; }
-    .service-card { min-height: 390px; border-radius: 72px 16px 16px 16px; }
-    .service-card:nth-child(even) { border-radius: 16px 72px 16px 16px; }
+    .service-card,
+    .service-card:nth-child(even) { min-height: 360px; border-radius: 24px; }
     .proof-grid { grid-template-columns: 1fr; gap: 34px; }
     .proof-number strong { margin: -18px 0 -10px; font-size: min(68vw,300px); }
     .proof-copy h2 { font-size: clamp(43px,12vw,62px); }
     .journal-heading { grid-template-columns: 1fr; }
     .journal-heading > a { grid-column: auto; }
-    .journal-visual { height: 240px; }
+    .journal-visual,
+    .visual-1,
+    .visual-2,
+    .visual-3 { height: 240px; border-radius: 24px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
