@@ -11,7 +11,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="container-wide corporate-head">
       <p class="eyebrow">01 / FOR BUSINESS</p>
       <div class="corporate-title">
-        <h1>AIを学ぶ日ではなく、<br /><em>仕事が一つ<span class="mobile-break"><br /></span>減る日</em>を。</h1>
+        <h1>AIを、<br /><em>人の味方に。</em></h1>
         <p>実際の資料と業務を持ち込み、AIで一度動かす。誰がどこを確認するかを決め、翌週も使える手順まで一緒につくります。</p>
       </div>
       <div class="page-hero-actions">
@@ -89,7 +89,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .corporate-head { position: relative; z-index: 1; }
   .corporate-title { display: grid; grid-template-columns: 1.3fr .7fr; gap: 70px; align-items: end; }
   .corporate-title h1 { margin: 0; }
-  .mobile-break { display: none; }
   .corporate-title h1 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; font-weight: 500; }
   .corporate-title > p { max-width: 480px; margin: 0 0 12px; color: var(--ink-700); line-height: 2; }
   .service-thesis { padding: clamp(110px,15vw,220px) 0; background: var(--bone); }
@@ -143,8 +142,5 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     .deliverable-grid { grid-template-columns: 1fr; }
     .deliverable-grid div { min-height: 180px; }
     .deliverable-grid strong { margin-top: 74px; }
-  }
-  @media (max-width: 680px) {
-    .mobile-break { display: inline; }
   }
 </style>
