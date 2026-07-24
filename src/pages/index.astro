@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import bookCover from '../assets/book-cover.jpg';
 import { book } from '../data/site';
 
 const insights = (await getCollection('insights', ({ data }) => !data.draft))
@@ -94,13 +96,18 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
         <p>BOOK / NOW AVAILABLE</p>
       </div>
 
-      <div class="book-visual" data-reveal aria-hidden="true">
-        <div class="book-cover">
-          <span>FOR SMALL BUSINESS</span>
-          <strong>AI</strong>
-          <p>仕事の変え方と<br />90日導入ロードマップ</p>
-          <small>TAIGA KAIZAKI</small>
-        </div>
+      <div class="book-visual" data-reveal>
+        <Image
+          class="book-cover"
+          src={bookCover}
+          alt={`『${book.title}』の表紙`}
+          width={780}
+          height={1248}
+          format="webp"
+          quality={82}
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
       <div class="book-copy" data-reveal>
@@ -359,25 +366,13 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
   .book-cover {
     position: relative;
     z-index: 1;
-    display: flex;
+    display: block;
     width: min(100%,390px);
-    aspect-ratio: .69;
-    flex-direction: column;
-    padding: clamp(28px,3vw,44px);
-    overflow: hidden;
-    color: var(--ocean);
-    background:
-      radial-gradient(circle at 80% 12%, rgba(255,255,255,.96), transparent 25%),
-      linear-gradient(155deg, #e7faff 0%, #bfefff 58%, #87dff5 100%);
-    box-shadow: 24px 30px 70px rgba(0,0,0,.28), inset -14px 0 24px rgba(4,71,142,.09);
+    height: auto;
+    border: 1px solid rgba(255,255,255,.18);
+    box-shadow: 24px 30px 70px rgba(0,0,0,.34);
     transform: rotate(-2.5deg);
   }
-  .book-cover::before { position: absolute; right: -42%; bottom: -14%; width: 110%; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.72); border-radius: 50%; box-shadow: 0 0 0 44px rgba(255,255,255,.12),0 0 0 88px rgba(255,255,255,.07); content: ""; }
-  .book-cover > * { position: relative; z-index: 1; }
-  .book-cover > span { font-size: 8px; font-weight: 700; letter-spacing: .2em; }
-  .book-cover strong { margin: auto 0 -20px; font-size: clamp(130px,17vw,230px); font-weight: 500; letter-spacing: -.13em; line-height: .7; }
-  .book-cover p { max-width: 15em; margin: 44px 0 24px; font-family: "Noto Serif JP", serif; font-size: clamp(18px,2vw,28px); font-weight: 600; line-height: 1.55; }
-  .book-cover small { font-size: 8px; font-weight: 700; letter-spacing: .16em; }
   .book-copy .jp-kicker { color: var(--tide); }
   .book-copy h2 { margin: 0 0 42px; font-size: clamp(52px,7vw,98px); font-weight: 500; letter-spacing: -.075em; line-height: 1.05; }
   .book-copy h2 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; font-weight: 500; }
@@ -550,7 +545,6 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
     .book-visual::before { width: min(110%,470px); }
     .book-visual::after { width: min(84%,360px); }
     .book-cover { width: min(82vw,360px); }
-    .book-cover strong { font-size: min(42vw,190px); }
     .book-copy h2 { font-size: clamp(43px,12vw,62px); }
     .service-current,
     .journal-grid { grid-template-columns: 1fr; }
