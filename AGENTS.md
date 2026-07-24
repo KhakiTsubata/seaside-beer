@@ -11,7 +11,7 @@
 
 - Never invent client names, participant counts, revenue, testimonials, outcomes, partnerships, certifications, or publication dates.
 - It is confirmed that the representative is 貝崎泰我, the base is Matsuyama, and AI guidance has been provided to a university professor. Keep the university anonymous unless publication permission is recorded.
-- The management-oriented generative AI book is in progress. Do not describe it as published until confirmed.
+- The book `中小企業のためのAI活用入門` by 貝崎泰我 is published. The confirmed Amazon ASIN is `B0H98S9S21`.
 - SeasideBeer is preparing for incorporation. Do not call it a corporation or company until confirmed.
 
 ## Content workflow

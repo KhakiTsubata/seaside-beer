@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { book } from '../data/site';
 
 const insights = (await getCollection('insights', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
@@ -86,10 +87,42 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
     </div>
   </section>
 
+  <section class="book-section" aria-labelledby="book-title">
+    <div class="container-wide book-grid">
+      <div class="section-marker book-marker" data-reveal>
+        <span>02</span>
+        <p>BOOK / NOW AVAILABLE</p>
+      </div>
+
+      <div class="book-visual" data-reveal aria-hidden="true">
+        <div class="book-cover">
+          <span>FOR SMALL BUSINESS</span>
+          <strong>AI</strong>
+          <p>仕事の変え方と<br />90日導入ロードマップ</p>
+          <small>TAIGA KAIZAKI</small>
+        </div>
+      </div>
+
+      <div class="book-copy" data-reveal>
+        <p class="jp-kicker">経営者・管理職のための、最初の一冊。</p>
+        <h2 id="book-title">AIを、<br /><em>会社の仕事へ。</em></h2>
+        <p class="book-name">『{book.title}』</p>
+        <p class="book-subtitle">{book.subtitle}</p>
+        <p class="book-description">
+          生成AIを試して終わらせず、実際の業務へ移すには何から始めればいいのか。仕事の選び方から、社内で使い続けるための90日までを一冊にまとめました。
+        </p>
+        <p class="book-author">{book.author} 著</p>
+        <a class="book-link" href={book.href} target="_blank" rel="noopener noreferrer">
+          Amazonで本を見る <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="services-section">
     <div class="container-wide">
       <header class="water-heading" data-reveal>
-        <div><span>02</span><p>WHAT WE DO</p></div>
+        <div><span>03</span><p>WHAT WE DO</p></div>
         <h2>AIを、知識から<br /><em>現場の力へ。</em></h2>
       </header>
 
@@ -108,7 +141,7 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
             <h3>実務で使うAI研修</h3>
             <p>参加者の実際の資料や業務を持ち込み、研修中に成果物を一つ完成させます。</p>
           </div>
-          <a href="/contact/">研修を相談する <span aria-hidden="true">→</span></a>
+          <a href="/contact/">初回無料相談へ <span aria-hidden="true">→</span></a>
         </article>
         <article class="service-card card-talent" data-reveal>
           <div class="service-card-top"><span>FOR YOUNG TALENT</span><b>03</b></div>
@@ -149,7 +182,7 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
   <section class="journal-section">
     <div class="container-wide">
       <header class="water-heading journal-heading" data-reveal>
-        <div><span>03</span><p>ACTIVITY / JOURNAL</p></div>
+        <div><span>04</span><p>ACTIVITY / JOURNAL</p></div>
         <h2>動きながら、<br /><em>言葉にしていく。</em></h2>
         <a class="water-link" href="/insights/">すべて見る <span aria-hidden="true">→</span></a>
       </header>
@@ -175,9 +208,12 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
 
   <section class="home-cta">
     <div class="container-wide home-cta-inner" data-reveal>
-      <p>START WHERE YOU ARE.</p>
+      <p>FREE FIRST CONSULTATION</p>
       <h2>まだ名前のない、<br /><em>相談から。</em></h2>
-      <a href="/contact/">話してみる <span aria-hidden="true">→</span></a>
+      <div class="home-cta-copy">
+        <p>初回相談は無料です。貝崎泰我が直接、時間のかかっている業務を一つ伺い、次の一歩を整理します。</p>
+        <a href="/contact/">初回無料相談へ <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -312,6 +348,46 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
   .water-link span { transition: transform .2s ease; }
   .water-link:hover span { transform: translateX(5px); }
 
+  .book-section { padding: clamp(100px,13vw,190px) 0; color: white; background: var(--ink); }
+  .book-grid { display: grid; grid-template-columns: .28fr .72fr 1fr; gap: clamp(42px,6vw,96px); align-items: center; }
+  .book-marker { align-self: stretch; color: var(--tide); border-color: var(--line-invert); }
+  .book-visual { position: relative; display: grid; min-height: 590px; place-items: center; }
+  .book-visual::before,
+  .book-visual::after { position: absolute; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; content: ""; }
+  .book-visual::before { width: 118%; aspect-ratio: 1; }
+  .book-visual::after { width: 88%; aspect-ratio: 1; border-color: rgba(116,220,246,.2); }
+  .book-cover {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: min(100%,390px);
+    aspect-ratio: .69;
+    flex-direction: column;
+    padding: clamp(28px,3vw,44px);
+    overflow: hidden;
+    color: var(--ocean);
+    background:
+      radial-gradient(circle at 80% 12%, rgba(255,255,255,.96), transparent 25%),
+      linear-gradient(155deg, #e7faff 0%, #bfefff 58%, #87dff5 100%);
+    box-shadow: 24px 30px 70px rgba(0,0,0,.28), inset -14px 0 24px rgba(4,71,142,.09);
+    transform: rotate(-2.5deg);
+  }
+  .book-cover::before { position: absolute; right: -42%; bottom: -14%; width: 110%; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.72); border-radius: 50%; box-shadow: 0 0 0 44px rgba(255,255,255,.12),0 0 0 88px rgba(255,255,255,.07); content: ""; }
+  .book-cover > * { position: relative; z-index: 1; }
+  .book-cover > span { font-size: 8px; font-weight: 700; letter-spacing: .2em; }
+  .book-cover strong { margin: auto 0 -20px; font-size: clamp(130px,17vw,230px); font-weight: 500; letter-spacing: -.13em; line-height: .7; }
+  .book-cover p { max-width: 15em; margin: 44px 0 24px; font-family: "Noto Serif JP", serif; font-size: clamp(18px,2vw,28px); font-weight: 600; line-height: 1.55; }
+  .book-cover small { font-size: 8px; font-weight: 700; letter-spacing: .16em; }
+  .book-copy .jp-kicker { color: var(--tide); }
+  .book-copy h2 { margin: 0 0 42px; font-size: clamp(52px,7vw,98px); font-weight: 500; letter-spacing: -.075em; line-height: 1.05; }
+  .book-copy h2 em { color: var(--tide); font-family: "Noto Serif JP", serif; font-style: normal; font-weight: 500; }
+  .book-name { margin: 0 0 8px; font-family: "Noto Serif JP", serif; font-size: clamp(20px,2.1vw,30px); font-weight: 600; }
+  .book-subtitle { margin: 0 0 32px; color: rgba(255,255,255,.54); font-size: 12px; }
+  .book-description { max-width: 620px; margin: 0 0 18px; color: rgba(255,255,255,.64); line-height: 2; }
+  .book-author { margin: 0 0 34px; color: var(--foam); font-size: 11px; font-weight: 700; letter-spacing: .06em; }
+  .book-link { display: inline-flex; min-height: 56px; gap: 28px; align-items: center; padding: 0 20px 0 24px; border: 1px solid rgba(255,255,255,.38); border-radius: 999px; font-size: 12px; font-weight: 700; transition: color .2s ease, background .2s ease, transform .2s ease; }
+  .book-link:hover { color: var(--ocean); background: white; transform: translateY(-3px); }
+
   .services-section { padding: clamp(100px,12vw,180px) 0; background: var(--cloud); }
   .water-heading { display: grid; grid-template-columns: .28fr 1fr; gap: clamp(60px,10vw,160px); margin-bottom: 80px; }
   .water-heading > div { display: flex; gap: 18px; align-items: flex-start; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ocean); }
@@ -366,10 +442,12 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
   .home-cta { position: relative; overflow: hidden; padding: clamp(100px,13vw,190px) 0; color: var(--ocean); background: linear-gradient(135deg, #dff8ff, #aeeafa); }
   .home-cta::before { position: absolute; right: -12%; bottom: -90%; width: 74%; aspect-ratio: 1.8; border: 1px solid rgba(255,255,255,.72); border-radius: 50%; box-shadow: 0 0 0 70px rgba(255,255,255,.12), 0 0 0 140px rgba(255,255,255,.08); content: ""; }
   .home-cta-inner { position: relative; z-index: 1; }
-  .home-cta p { margin-bottom: 28px; color: var(--sea-700); font-size: 9px; font-weight: 700; letter-spacing: .2em; }
+  .home-cta-inner > p { margin-bottom: 28px; color: var(--sea-700); font-size: 9px; font-weight: 700; letter-spacing: .2em; }
   .home-cta h2 { max-width: 1040px; margin-bottom: 46px; }
-  .home-cta > div > a { display: inline-flex; min-height: 58px; gap: 40px; align-items: center; padding: 0 16px 0 26px; border-radius: 999px; color: white; background: var(--ocean); font-size: 13px; font-weight: 700; }
-  .home-cta > div > a span { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 50%; color: var(--ocean); background: white; }
+  .home-cta-copy { display: flex; gap: 42px; align-items: center; justify-content: space-between; }
+  .home-cta-copy > p { max-width: 620px; margin: 0; color: rgba(4,42,83,.68); line-height: 1.9; }
+  .home-cta-copy > a { display: inline-flex; min-height: 58px; flex: 0 0 auto; gap: 40px; align-items: center; padding: 0 16px 0 26px; border-radius: 999px; color: white; background: var(--ocean); font-size: 13px; font-weight: 700; }
+  .home-cta-copy > a span { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 50%; color: var(--ocean); background: white; }
 
   @media (max-width: 1060px) {
     .water-hero,
@@ -381,6 +459,8 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
     .matsuyama-badge { right: 2%; }
     .thought-grid,
     .water-heading { grid-template-columns: .2fr 1fr; gap: 60px; }
+    .book-grid { grid-template-columns: .2fr .8fr 1fr; gap: 42px; }
+    .book-visual { min-height: 500px; }
     .service-current { gap: 12px; }
     .service-card { min-height: 460px; padding: 24px; }
     .journal-heading { grid-template-columns: .2fr 1fr; }
@@ -464,6 +544,14 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
     .home-cta h2 { font-size: clamp(43px,12vw,64px); }
     .thought-note { grid-template-columns: 1fr; gap: 34px; }
     .thought-note .water-link { justify-self: start; }
+    .book-grid { grid-template-columns: 1fr; gap: 46px; }
+    .book-marker { width: 180px; }
+    .book-visual { min-height: auto; }
+    .book-visual::before { width: min(110%,470px); }
+    .book-visual::after { width: min(84%,360px); }
+    .book-cover { width: min(82vw,360px); }
+    .book-cover strong { font-size: min(42vw,190px); }
+    .book-copy h2 { font-size: clamp(43px,12vw,62px); }
     .service-current,
     .journal-grid { grid-template-columns: 1fr; }
     .service-card,
@@ -477,6 +565,8 @@ const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
     .visual-1,
     .visual-2,
     .visual-3 { height: 240px; border-radius: 24px; }
+    .home-cta-copy { align-items: flex-start; flex-direction: column; }
+    .home-cta-copy > a { width: 100%; justify-content: space-between; }
   }
 
   @media (prefers-reduced-motion: reduce) {

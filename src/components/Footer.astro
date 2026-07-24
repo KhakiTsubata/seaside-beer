@@ -1,5 +1,5 @@
 ---
-import { primaryNav, site } from '../data/site';
+import { book, primaryNav, site, socialLinks } from '../data/site';
 
 const year = new Date().getFullYear();
 ---
@@ -9,7 +9,7 @@ const year = new Date().getFullYear();
   <div class="container-wide footer-lead" data-reveal>
     <p>FROM MATSUYAMA, EHIME</p>
     <h2>仕事を軽く。<br /><em>松山を、面白く。</em></h2>
-    <a class="footer-contact" href="/contact/">まずは話してみる <span aria-hidden="true">→</span></a>
+    <a class="footer-contact" href="/contact/">初回無料相談 <span aria-hidden="true">→</span></a>
   </div>
   <div class="container-wide footer-grid">
     <div class="footer-brand-block">
@@ -29,8 +29,13 @@ const year = new Date().getFullYear();
     <div class="footer-column">
       <h2>情報</h2>
       <a href={`mailto:${site.email}`}>{site.email}</a>
+      <a href={book.href} target="_blank" rel="noopener noreferrer">著書：{book.title} ↗</a>
       <a href="/privacy/">プライバシー</a>
       <a href="/legal/">特定商取引法に基づく表記</a>
+      <h2 class="footer-subheading">発信</h2>
+      {socialLinks.map((item) => (
+        <a href={item.href} target="_blank" rel="noopener noreferrer">{item.label} ↗</a>
+      ))}
     </div>
   </div>
   <div class="container-wide footer-bottom">
