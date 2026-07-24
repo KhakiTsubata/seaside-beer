@@ -9,6 +9,19 @@ export const site = {
   representative: '貝崎泰我',
 } as const;
 
+export const book = {
+  title: '中小企業のためのAI活用入門',
+  subtitle: 'はじめてでもわかる 仕事の変え方と90日導入ロードマップ',
+  author: '貝崎泰我',
+  href: 'https://www.amazon.co.jp/dp/B0H98S9S21',
+} as const;
+
+export const socialLinks = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/taiga-kaizaki-1105a1259/' },
+  { label: 'X', href: 'https://x.com/SeasideBeer' },
+  { label: 'note', href: 'https://note.com/seaside_beer' },
+] as const;
+
 export const primaryNav = [
   { href: '/services/corporate/', label: '企業向けAI支援' },
   { href: '/academy/', label: '若者AI人材育成' },
