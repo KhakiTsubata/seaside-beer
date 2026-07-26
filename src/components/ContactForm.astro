@@ -1,4 +1,7 @@
-<form class="contact-form" id="contact-form" action="/api/contact" method="POST">
+<form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="c4c2eafb-ed7f-47ef-8dd0-a1e5e3170c5b" />
+  <input type="hidden" name="subject" value="【SeasideBeer】Webサイトからのお問い合わせ" />
+  <input type="hidden" name="from_name" value="SeasideBeer Webサイト" />
   <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" hidden />
 
   <div class="form-grid">
@@ -58,7 +61,7 @@
       status.className = 'form-status';
 
       try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch(form.action, {
           method: 'POST',
           headers: { Accept: 'application/json' },
           body: new FormData(form),
