@@ -24,7 +24,7 @@ npm install
 npm run dev
 ```
 
-問い合わせフォームはVercel Functionsの `/api/contact` を通して送信します。VercelのProductionとPreviewに `WEB3FORMS_ACCESS_KEY` を設定してください。キーをリポジトリや公開HTMLへ書かないでください。
+問い合わせフォームはブラウザからWeb3Formsへ直接送信します。Web3FormsのAccess Keyは送信先を識別する公開用の値で、`src/components/ContactForm.astro` に設定します。
 
 ## 公開前に確認するもの
 
